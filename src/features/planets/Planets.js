@@ -7,7 +7,6 @@ const PlanetsList = () => {
   const [page, setPage] = useState(1);
   const { data, isLoading, isFetching } = useGetPlanetsQuery(page);
   const prefetchPage = usePrefetch('getPlanets');
-  const totalPages = 6;
 
   const prefetchNext = useCallback(() => {
     prefetchPage(page + 1);
@@ -21,10 +20,10 @@ const PlanetsList = () => {
     if (page === 1 && page !== 1) {
       prefetchPrev();
     }
-    if (page === totalPages) {
+    if (page !== 6) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, prefetchPrev]);
+  }, [page, prefetchNext, prefetchPrev]);
 
   if (isLoading) {
     return <Loading />;
@@ -64,14 +63,9 @@ const PlanetsList = () => {
         >
           previous
         </button>
-        <div className="space-x-4 text-white text-3xl">
-          {`${page} / ${totalPages}`}
-          {/* {`${totalPages !== 1 ? `${page} / ${totalPages}` : ''}`} */}
-        </div>
         <button
           onClick={() => setPage((prev) => prev + 1)}
           isLoading={isFetching}
-          disabled={page === totalPages}
           onMouseEnter={prefetchNext}
           className="letter-box bg-orange"
         >
