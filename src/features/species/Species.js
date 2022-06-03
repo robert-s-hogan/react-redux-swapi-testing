@@ -1,27 +1,25 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  // selectPlanetDataObject,
-  getPlanetsStatus,
-  getPlanetsError,
-  selectAllPlanetResults,
-  fetchPlanets,
-} from './planetsSlice';
+  selectAllSpeciesResults,
+  getSpeciesStatus,
+  getSpeciesError,
+  fetchSpecies,
+} from './speciesSlice';
 import { useEffect } from 'react';
 
 import { Loading } from '../../components/Loading';
-import Planet from './Planet';
+import Specie from './Specie';
 
-export const Planets = () => {
+export const Species = () => {
   const dispatch = useDispatch();
 
-  // const planets = useSelector(selectPlanetDataObject);
-  const planets = useSelector(selectAllPlanetResults);
-  const planetsStatus = useSelector(getPlanetsStatus);
-  const error = useSelector(getPlanetsError);
+  const planets = useSelector(selectAllSpeciesResults);
+  const planetsStatus = useSelector(getSpeciesStatus);
+  const error = useSelector(getSpeciesError);
 
   useEffect(() => {
     if (planetsStatus === 'idle') {
-      dispatch(fetchPlanets());
+      dispatch(fetchSpecies());
     }
   }, [planetsStatus, dispatch]);
 
@@ -31,7 +29,7 @@ export const Planets = () => {
   } else if (planetsStatus === 'succeeded') {
     const orderedPlanets = planets;
     content = orderedPlanets.map((planet) => (
-      <Planet key={planet.name} name={planet.name} />
+      <Specie key={planet.name} name={planet.name} />
     ));
   } else if (planetsStatus === 'failed') {
     content = <p>{error}</p>;
@@ -44,4 +42,4 @@ export const Planets = () => {
   );
 };
 
-export default Planets;
+export default Species;

@@ -39,7 +39,11 @@ export const People = () => {
     content = <p>{error}</p>;
   }
 
-  return <section className="my-6">{content}</section>;
+  return (
+    <section className="container max-w-4xl px-4 md:mx-auto my-4">
+      {content}
+    </section>
+  );
 };
 
 export default People;
