@@ -7,11 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import { store } from './store';
 import { App } from './App';
 import Navigation from './components/Navigation';
+import Planets from './features/planets/Planets';
 import './index.css';
 
-// import { fetchPlanets } from './features/planets/planetsSlice';
+import { fetchPlanets } from './features/planets/planetsSlice';
 
-// store.dispatch(fetchPlanets());
+store.dispatch(fetchPlanets());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,13 +20,8 @@ root.render(
     <BrowserRouter>
       <Navigation />
       <Routes>
-        <Route path="/" element={<App />}>
-          {/* <Route index element={<Home />} />
-          <Route path="teams" element={<Teams />}>
-            <Route path=":teamId" element={<Team />} />
-            <Route path="new" element={<NewTeamForm />} />
-            <Route index element={<LeagueStandings />} /> */}
-        </Route>
+        <Route path="/" element={<App />} />
+        <Route path="planets" element={<Planets />} />
         {/* <Route component={NotFoundPage} /> */}
       </Routes>
     </BrowserRouter>

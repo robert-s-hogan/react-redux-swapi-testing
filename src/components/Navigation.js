@@ -21,7 +21,9 @@ function Navigation() {
         <li>
           <NavLink
             to="/"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            className={({ isActive }) =>
+              isActive ? 'letter-box bg-purple' : undefined
+            }
           >
             People
           </NavLink>
@@ -30,7 +32,7 @@ function Navigation() {
           <NavLink
             to="planets"
             className={({ isActive }) =>
-              isActive ? activeClassName : undefined
+              isActive ? 'letter-box bg-orange' : undefined
             }
           >
             Planets
@@ -39,7 +41,7 @@ function Navigation() {
         <li>
           <NavLink to="species">
             {({ isActive }) => (
-              <span className={isActive ? activeClassName : undefined}>
+              <span className={isActive ? 'letter-box bg-yellow' : undefined}>
                 Species
               </span>
             )}
@@ -48,7 +50,7 @@ function Navigation() {
         <li>
           <NavLink to="films">
             {({ isActive }) => (
-              <span className={isActive ? activeClassName : undefined}>
+              <span className={isActive ? 'letter-box bg-green' : undefined}>
                 Films
               </span>
             )}
@@ -57,7 +59,7 @@ function Navigation() {
         <li>
           <NavLink to="starships">
             {({ isActive }) => (
-              <span className={isActive ? activeClassName : undefined}>
+              <span className={isActive ? 'letter-box bg-blue' : undefined}>
                 Starships
               </span>
             )}
@@ -66,7 +68,7 @@ function Navigation() {
         <li>
           <NavLink to="vehicles">
             {({ isActive }) => (
-              <span className={isActive ? activeClassName : undefined}>
+              <span className={isActive ? 'letter-box bg-red' : undefined}>
                 Vehicles
               </span>
             )}
