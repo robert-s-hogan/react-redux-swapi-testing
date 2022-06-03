@@ -6,6 +6,8 @@ import filmReducer from '../features/films/filmsSlice';
 import starshipsReducer from '../features/starships/starshipsSlice';
 import vehiclesReducer from '../features/vehicles/vehiclesSlice';
 
+import { apiPlanets } from '../services/apiPlanets';
+
 export const store = configureStore({
   reducer: {
     people: peopleReducer,
@@ -14,5 +16,8 @@ export const store = configureStore({
     films: filmReducer,
     starships: starshipsReducer,
     vehicles: vehiclesReducer,
+    [apiPlanets.reducerPath]: apiPlanets.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiPlanets.middleware),
 });

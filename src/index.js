@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 
 import { store } from './store';
+import { apiPlanets } from './services/apiPlanets';
 // import { App } from './App';
 
 import Navigation from './components/Navigation';
@@ -16,33 +17,33 @@ import Starships from './features/starships/Starships';
 import Vehicles from './features/vehicles/Vehicles';
 import './index.css';
 
-import { fetchPeople } from './features/people/peopleSlice';
-import { fetchPlanets } from './features/planets/planetsSlice';
-import { fetchSpecies } from './features/species/speciesSlice';
-import { fetchFilms } from './features/films/filmsSlice';
-import { fetchStarships } from './features/starships/starshipsSlice';
-import { fetchVehicles } from './features/vehicles/vehiclesSlice';
+// import { fetchPeople } from './features/people/peopleSlice';
+// import { fetchPlanets } from './features/planets/planetsSlice';
+// import { fetchSpecies } from './features/species/speciesSlice';
+// import { fetchFilms } from './features/films/filmsSlice';
+// import { fetchStarships } from './features/starships/starshipsSlice';
+// import { fetchVehicles } from './features/vehicles/vehiclesSlice';
 
-store.dispatch(fetchPeople());
-setTimeout(() => {
-  store.dispatch(fetchPlanets());
-}, 1000);
-setTimeout(() => {
-  store.dispatch(fetchSpecies());
-}, 1000);
-setTimeout(() => {
-  store.dispatch(fetchFilms());
-}, 1000);
-setTimeout(() => {
-  store.dispatch(fetchStarships());
-}, 1000);
-setTimeout(() => {
-  store.dispatch(fetchVehicles());
-}, 1000);
+// store.dispatch(fetchPeople());
+// setTimeout(() => {
+//   store.dispatch(fetchPlanets());
+// }, 1000);
+// setTimeout(() => {
+//   store.dispatch(fetchSpecies());
+// }, 1000);
+// setTimeout(() => {
+//   store.dispatch(fetchFilms());
+// }, 1000);
+// setTimeout(() => {
+//   store.dispatch(fetchStarships());
+// }, 1000);
+// setTimeout(() => {
+//   store.dispatch(fetchVehicles());
+// }, 1000);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
+  <Provider store={store} api={apiPlanets}>
     <BrowserRouter>
       <Navigation />
       <Routes>
