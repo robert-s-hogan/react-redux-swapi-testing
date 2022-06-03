@@ -67,6 +67,7 @@ const PlanetsList = () => {
           onClick={() => setPage((prev) => prev + 1)}
           isLoading={isFetching}
           onMouseEnter={prefetchNext}
+          disabled={page === 6}
           className="letter-box bg-orange"
         >
           next
