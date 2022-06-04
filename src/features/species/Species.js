@@ -6,6 +6,9 @@ import { usePrefetch, useGetSpeciesQuery } from '../../services/apiSpecies';
 import { Loading } from '../../components/Loading';
 import Specie from './Specie';
 import GridContainer from '../../components/GridContainer';
+import CardContainer from '../../components/CardContainer';
+import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 
 const Species = () => {
   const dispatch = useDispatch();
@@ -61,15 +64,16 @@ const Species = () => {
       ) : (
         <GridContainer>
           {data.results.map((specie) => (
-            <Specie
-              key={specie.name}
-              name={specie.name}
-              classification={specie.classification}
-            />
+            <CardContainer key={specie.name}>
+              <Specie
+                name={specie.name}
+                classification={specie.classification}
+              />
+            </CardContainer>
           ))}
         </GridContainer>
       )}
-      <div className="my-4 flex justify-between items-center text-2xl">
+      <Pagination>
         <button
           className="letter-box bg-green"
           onClick={() => setPage((prev) => prev - 1)}
@@ -88,16 +92,16 @@ const Species = () => {
         >
           next
         </button>
-      </div>
+      </Pagination>
     </div>
   );
 };
 
 export const SpeciesAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl md:mx-auto my-4">
+    <Container>
       <Species />
-    </section>
+    </Container>
   );
 };
 

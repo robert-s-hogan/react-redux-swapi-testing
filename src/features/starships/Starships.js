@@ -6,6 +6,9 @@ import { usePrefetch, useGetStarshipsQuery } from '../../services/apiStarships';
 import { Loading } from '../../components/Loading';
 import Starship from './Starship';
 import GridContainer from '../../components/GridContainer';
+import CardContainer from '../../components/CardContainer';
+import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 
 const Starships = () => {
   const dispatch = useDispatch();
@@ -61,11 +64,13 @@ const Starships = () => {
       ) : (
         <GridContainer>
           {data.results.map((starship) => (
-            <Starship key={starship.name} name={starship.name} />
+            <CardContainer key={starship.name}>
+              <Starship name={starship.name} />
+            </CardContainer>
           ))}
         </GridContainer>
       )}
-      <div className="my-4 flex justify-between items-center text-2xl">
+      <Pagination>
         <button
           className="letter-box bg-green"
           onClick={() => setPage((prev) => prev - 1)}
@@ -84,16 +89,16 @@ const Starships = () => {
         >
           next
         </button>
-      </div>
+      </Pagination>
     </div>
   );
 };
 
 export const StarshipsAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl md:mx-auto my-4">
+    <Container>
       <Starships />
-    </section>
+    </Container>
   );
 };
 

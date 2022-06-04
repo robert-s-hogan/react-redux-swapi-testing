@@ -6,6 +6,9 @@ import { usePrefetch, useGetVehiclesQuery } from '../../services/apiVehicles';
 import { Loading } from '../../components/Loading';
 import Vehicle from './Vehicle';
 import GridContainer from '../../components/GridContainer';
+import CardContainer from '../../components/CardContainer';
+import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 
 const Vehicles = () => {
   const dispatch = useDispatch();
@@ -52,11 +55,13 @@ const Vehicles = () => {
       ) : (
         <GridContainer>
           {data.results.map((vehicle) => (
-            <Vehicle key={vehicle.name} name={vehicle.name} />
+            <CardContainer key={vehicle.name}>
+              <Vehicle name={vehicle.name} />
+            </CardContainer>
           ))}
         </GridContainer>
       )}
-      <div className="my-4 flex justify-between items-center text-2xl">
+      <Pagination>
         <button
           className="letter-box bg-green"
           onClick={() => setPage((prev) => prev - 1)}
@@ -75,16 +80,16 @@ const Vehicles = () => {
         >
           next
         </button>
-      </div>
+      </Pagination>
     </div>
   );
 };
 
 export const VehiclesAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl md:mx-auto my-4">
+    <Container>
       <Vehicles />
-    </section>
+    </Container>
   );
 };
 

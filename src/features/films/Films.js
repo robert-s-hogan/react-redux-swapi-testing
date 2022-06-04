@@ -6,6 +6,9 @@ import { usePrefetch, useGetFilmsQuery } from '../../services/apiFilms';
 import { Loading } from '../../components/Loading';
 import Film from './Film';
 import GridContainer from '../../components/GridContainer';
+import CardContainer from '../../components/CardContainer';
+import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 
 export const Films = () => {
   const dispatch = useDispatch();
@@ -53,7 +56,7 @@ export const Films = () => {
   }
 
   return (
-    <div>
+    <>
       {isFetching ? (
         <>
           <Loading />
@@ -61,11 +64,13 @@ export const Films = () => {
       ) : (
         <GridContainer>
           {data.results.map((film) => (
-            <Film key={film.title} title={film.title} />
+            <CardContainer key={film.title}>
+              <Film title={film.title} />
+            </CardContainer>
           ))}
         </GridContainer>
       )}
-      <div className="my-4 flex justify-between items-center text-2xl">
+      <Pagination>
         <button
           className="letter-box bg-green"
           onClick={() => setPage((prev) => prev - 1)}
@@ -85,16 +90,16 @@ export const Films = () => {
         >
           next
         </button>
-      </div>
-    </div>
+      </Pagination>
+    </>
   );
 };
 
 export const FilmsAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl md:mx-auto my-4">
+    <Container>
       <Films />
-    </section>
+    </Container>
   );
 };
 

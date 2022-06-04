@@ -6,6 +6,9 @@ import { usePrefetch, useGetPlanetsQuery } from '../../services/apiPlanets';
 import { Loading } from '../../components/Loading';
 import Planet from '../../features/planets/Planet';
 import GridContainer from '../../components/GridContainer';
+import CardContainer from '../../components/CardContainer';
+import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 
 const PlanetsList = () => {
   const dispatch = useDispatch();
@@ -61,15 +64,17 @@ const PlanetsList = () => {
       ) : (
         <GridContainer>
           {data.results.map((planet) => (
-            <Planet
-              key={planet.name}
-              name={planet.name}
-              terrain={planet.terrain}
-            />
+            <CardContainer key={planet.name}>
+              <Planet
+                key={planet.name}
+                name={planet.name}
+                terrain={planet.terrain}
+              />
+            </CardContainer>
           ))}
         </GridContainer>
       )}
-      <div className="my-4 flex justify-between items-center text-2xl">
+      <Pagination>
         <button
           className="letter-box bg-green"
           onClick={() => setPage((prev) => prev - 1)}
@@ -88,16 +93,16 @@ const PlanetsList = () => {
         >
           next
         </button>
-      </div>
+      </Pagination>
     </div>
   );
 };
 
 export const PlanetsAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl md:mx-auto my-4">
+    <Container>
       <PlanetsList />
-    </section>
+    </Container>
   );
 };
 

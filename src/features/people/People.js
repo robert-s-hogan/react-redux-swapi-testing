@@ -6,6 +6,9 @@ import { usePrefetch, useGetPeopleQuery } from '../../services/apiPeople';
 import { Loading } from '../../components/Loading';
 import Person from './Person';
 import GridContainer from '../../components/GridContainer';
+import CardContainer from '../../components/CardContainer';
+import Container from '../../components/Container';
+import Pagination from '../../components/Pagination';
 
 const People = () => {
   const dispatch = useDispatch();
@@ -61,15 +64,17 @@ const People = () => {
       ) : (
         <GridContainer>
           {data.results.map((person) => (
-            <Person
-              key={person.name}
-              homeworld={person.homeworld}
-              name={person.name}
-            />
+            <CardContainer key={person.name}>
+              <Person
+                key={person.name}
+                homeworld={person.homeworld}
+                name={person.name}
+              />
+            </CardContainer>
           ))}
         </GridContainer>
       )}
-      <div className="my-4 flex justify-between items-center text-2xl">
+      <Pagination>
         <button
           className="letter-box bg-green"
           onClick={() => setPage((prev) => prev - 1)}
@@ -88,16 +93,16 @@ const People = () => {
         >
           next
         </button>
-      </div>
+      </Pagination>
     </div>
   );
 };
 
 export const PeopleAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl md:mx-auto my-4">
+    <Container>
       <People />
-    </section>
+    </Container>
   );
 };
 

@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 
 import App from './App';
-import Navigation from './components/Navigation';
 import People from './features/people/People';
 import Planets from './features/planets/Planets';
 import Species from './features/species/Species';
@@ -21,7 +20,6 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <App>
-        <Navigation />
         <Routes>
           <Route path="/" element={<People />} />
           <Route path="planets" element={<Planets />} />
