@@ -35,15 +35,15 @@ const speciesSlice = createSlice({
       })
       .addCase(fetchSpecies.rejected, (state, action) => {
         state.error = action.error.message;
-        state.loading = 'failed';
+        state.status = 'failed';
       })
       .addCase(fetchSpecies.pending, (state) => {
-        state.loading = 'loading';
+        state.status = 'loading';
       });
   },
 });
 
-// export const selectSpeciesDataObject = (state) => state.species.data;
+export const selectSpeciesDataObject = (state) => state.species.data;
 export const selectAllSpeciesResults = (state) => state.species.data.results;
 export const getNextSpeciesPage = (state) => state.species.next;
 export const getPreviousSpeciesPage = (state) => state.species.previous;

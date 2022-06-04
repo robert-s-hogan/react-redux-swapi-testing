@@ -1,13 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectAllSpeciesResults,
-  getSpeciesStatus,
-  getSpeciesError,
-  fetchSpecies,
-} from './speciesSlice';
+import { getSpeciesStatus, fetchSpecies } from './speciesSlice';
 import { usePrefetch, useGetSpeciesQuery } from '../../services/apiSpecies';
-
 import { Loading } from '../../components/Loading';
 import Specie from './Specie';
 
@@ -15,13 +9,9 @@ const Species = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(4);
-
-  const species = useSelector(selectAllSpeciesResults);
   const speciesStatus = useSelector(getSpeciesStatus);
-  const error = useSelector(getSpeciesError);
 
   const { data, isLoading, isFetching } = useGetSpeciesQuery(page);
-
   const prefetchPage = usePrefetch('getSpecies');
 
   const prefetchNext = useCallback(() => {
@@ -33,14 +23,14 @@ const Species = () => {
   }, [prefetchPage, page]);
 
   useEffect(() => {
+    if (data !== null && speciesStatus === 'idle') {
+      dispatch(fetchSpecies());
+    }
     if (page === 1 && page !== 1) {
       prefetchPrev();
     }
     if (page !== totalPages) {
       prefetchNext();
-    }
-    if (speciesStatus === 'idle') {
-      dispatch(fetchSpecies());
     }
   }, [page, totalPages, prefetchNext, prefetchPrev, speciesStatus, dispatch]);
 

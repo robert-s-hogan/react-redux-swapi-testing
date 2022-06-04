@@ -37,10 +37,10 @@ const planetsSlice = createSlice({
       })
       .addCase(fetchPlanets.rejected, (state, action) => {
         state.error = action.error.message;
-        state.loading = 'failed';
+        state.status = 'failed';
       })
       .addCase(fetchPlanets.pending, (state) => {
-        state.loading = 'loading';
+        state.status = 'loading';
       });
   },
 });

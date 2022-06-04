@@ -9,12 +9,12 @@ const initialState = {
   previous: null,
   error: null,
 };
-const SPECIES_URL = 'https://swapi.dev/api/starships/';
+const STARSHIPS_URL = 'https://swapi.dev/api/starships/';
 
 export const fetchStarships = createAsyncThunk(
   'starships/fetchStarships',
   async () => {
-    const response = await axios.get(SPECIES_URL);
+    const response = await axios.get(STARSHIPS_URL);
     return response.data;
   },
 );
@@ -35,10 +35,10 @@ const starshipsSlice = createSlice({
       })
       .addCase(fetchStarships.rejected, (state, action) => {
         state.error = action.error.message;
-        state.loading = 'failed';
+        state.status = 'failed';
       })
       .addCase(fetchStarships.pending, (state) => {
-        state.loading = 'loading';
+        state.status = 'loading';
       });
   },
 });

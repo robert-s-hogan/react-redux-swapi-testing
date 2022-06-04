@@ -9,10 +9,10 @@ const initialState = {
   previous: null,
   error: null,
 };
-const SPECIES_URL = 'https://swapi.dev/api/films/';
+const FILMS_URL = 'https://swapi.dev/api/films/';
 
 export const fetchFilms = createAsyncThunk('films/fetchFilms', async () => {
-  const response = await axios.get(SPECIES_URL);
+  const response = await axios.get(FILMS_URL);
   return response.data;
 });
 
@@ -32,10 +32,10 @@ const filmsSlice = createSlice({
       })
       .addCase(fetchFilms.rejected, (state, action) => {
         state.error = action.error.message;
-        state.loading = 'failed';
+        state.status = 'failed';
       })
       .addCase(fetchFilms.pending, (state) => {
-        state.loading = 'loading';
+        state.status = 'loading';
       });
   },
 });

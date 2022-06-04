@@ -1,27 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectAllPeople,
-  getPeopleStatus,
-  getPeopleError,
-  fetchPeople,
-} from './peopleSlice';
+import { getPeopleStatus, fetchPeople } from './peopleSlice';
 import { usePrefetch, useGetPeopleQuery } from '../../services/apiPeople';
-
 import { Loading } from '../../components/Loading';
 import Person from './Person';
 
 const People = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(9);
-
-  const people = useSelector(selectAllPeople);
+  const [totalPages] = useState(9);
   const peopleStatus = useSelector(getPeopleStatus);
-  const error = useSelector(getPeopleError);
 
   const { data, isLoading, isFetching } = useGetPeopleQuery(page);
-
   const prefetchPage = usePrefetch('getPeople');
 
   const prefetchNext = useCallback(() => {
@@ -33,16 +23,16 @@ const People = () => {
   }, [prefetchPage, page]);
 
   useEffect(() => {
-    if (page === 1 && page !== 1) {
+    if (data !== null && peopleStatus === 'idle') {
+      dispatch(fetchPeople());
+    }
+    if (page !== 1) {
       prefetchPrev();
     }
     if (page !== totalPages) {
       prefetchNext();
     }
-    if (peopleStatus === 'idle') {
-      dispatch(fetchPeople());
-    }
-  }, [page, totalPages, prefetchNext, prefetchPrev, peopleStatus, dispatch]);
+  }, [page, totalPages, prefetchNext, peopleStatus, prefetchPrev, dispatch]);
 
   if (isLoading) {
     return <Loading />;

@@ -1,12 +1,16 @@
 import { useCallback, useState, useEffect } from 'react';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { getPlanetsStatus, fetchPlanets } from './planetsSlice';
 import { usePrefetch, useGetPlanetsQuery } from '../../services/apiPlanets';
 import { Loading } from '../../components/Loading';
 import Planet from '../../features/planets/Planet';
 
 const PlanetsList = () => {
+  const dispatch = useDispatch();
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(6);
+  const planetsStatus = useSelector(getPlanetsStatus);
+
   const { data, isLoading, isFetching } = useGetPlanetsQuery(page);
   const prefetchPage = usePrefetch('getPlanets');
 
@@ -19,13 +23,16 @@ const PlanetsList = () => {
   }, [prefetchPage, page]);
 
   useEffect(() => {
+    if (data !== null && planetsStatus === 'idle') {
+      dispatch(fetchPlanets());
+    }
     if (page === 1 && page !== 1) {
       prefetchPrev();
     }
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, prefetchPrev]);
+  }, [page, totalPages, prefetchNext, prefetchPrev, planetsStatus, dispatch]);
 
   if (isLoading) {
     return <Loading />;

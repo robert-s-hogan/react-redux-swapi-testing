@@ -1,45 +1,89 @@
+import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  selectAllVehiclesResults,
-  getVehiclesStatus,
-  getVehiclesError,
-  fetchVehicles,
-} from './vehiclesSlice';
-import { useEffect } from 'react';
-
+import { getVehiclesStatus, fetchVehicles } from './vehiclesSlice';
+import { usePrefetch, useGetVehiclesQuery } from '../../services/apiVehicles';
 import { Loading } from '../../components/Loading';
 import Vehicle from './Vehicle';
 
-export const Vehicles = () => {
+const Vehicles = () => {
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  const [totalPages] = useState(4);
+  // const vehiclesStatus = useSelector(getVehiclesStatus);
+  const { data, isLoading, isFetching } = useGetVehiclesQuery(page);
+  const prefetchPage = usePrefetch('getVehicles');
 
-  const vehicles = useSelector(selectAllVehiclesResults);
-  const filmsStatus = useSelector(getVehiclesStatus);
-  const error = useSelector(getVehiclesError);
+  const prefetchNext = useCallback(() => {
+    prefetchPage(page + 1);
+  }, [prefetchPage, page]);
+
+  const prefetchPrev = useCallback(() => {
+    prefetchPage(page - 1);
+  }, [prefetchPage, page]);
 
   useEffect(() => {
-    if (filmsStatus === 'idle') {
+    if (data !== null) {
       dispatch(fetchVehicles());
     }
-  }, [filmsStatus, dispatch]);
+    if (page !== 1) {
+      prefetchPrev();
+    }
+    if (page !== totalPages) {
+      prefetchNext();
+    }
+  }, [page, totalPages, prefetchNext, prefetchPrev, dispatch]);
 
-  let content;
-  if (filmsStatus === 'loading') {
-    content = <Loading />;
-  } else if (filmsStatus === 'succeeded') {
-    const orderedVehicles = vehicles;
-    content = orderedVehicles.map((vehicle) => (
-      <Vehicle key={vehicle.name} name={vehicle.name} />
-    ));
-  } else if (filmsStatus === 'failed') {
-    content = <p>{error}</p>;
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (!data) {
+    return <div>No posts</div>;
   }
 
   return (
+    <div>
+      {isFetching ? (
+        <div>
+          <Loading />
+        </div>
+      ) : (
+        <section className="container max-w-4xl px-4 md:mx-auto my-4">
+          {data.results.map((vehicle) => (
+            <Vehicle key={vehicle.name} name={vehicle.name} />
+          ))}
+        </section>
+      )}
+      <div className="my-4 flex justify-between items-center text-2xl">
+        <button
+          className="letter-box bg-green"
+          onClick={() => setPage((prev) => prev - 1)}
+          isLoading={isFetching}
+          onMouseEnter={prefetchPrev}
+          disabled={page === 1}
+        >
+          previous
+        </button>
+        <button
+          onClick={() => setPage((prev) => prev + 1)}
+          isLoading={isFetching}
+          onMouseEnter={prefetchNext}
+          disabled={page === totalPages}
+          className="letter-box bg-orange"
+        >
+          next
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export const VehiclesAPI = ({ data }) => {
+  return (
     <section className="container max-w-4xl px-4 md:mx-auto my-4">
-      {content}
+      <Vehicles />
     </section>
   );
 };
 
-export default Vehicles;
+export default VehiclesAPI;

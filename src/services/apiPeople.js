@@ -6,7 +6,7 @@ const SWAPI_API = 'https://swapi.dev/api';
 // Define our single API slice object
 export const apiPeople = createApi({
   // The cache reducer expects to be added at `state.api` (already default - this is optional)
-  reducerPath: 'api',
+  reducerPath: 'people',
   // All of our requests will have URLs starting with SWAPI_API
   baseQuery: fetchBaseQuery({ baseUrl: SWAPI_API }),
   // The "endpoints" represent operations and requests for this server
