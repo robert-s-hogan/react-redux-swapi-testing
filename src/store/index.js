@@ -8,6 +8,9 @@ import vehiclesReducer from '../features/vehicles/vehiclesSlice';
 
 import { apiPlanets } from '../services/apiPlanets';
 import { apiPeople } from '../services/apiPeople';
+import { apiSpecies } from '../services/apiSpecies';
+// import { apiStarships } from '../services/apiStarships';
+// import { apiVehicles } from '../services/apiVehicles';
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +22,9 @@ export const store = configureStore({
     vehicles: vehiclesReducer,
     [apiPlanets.reducerPath]: apiPlanets.reducer,
     [apiPeople.reducerPath]: apiPeople.reducer,
+    [apiSpecies.reducerPath]: apiSpecies.reducer,
+    // [apiStarships.reducerPath]: apiStarships.reducer,
+    // [apiVehicles.reducerPath]: apiVehicles.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiPlanets.middleware),
