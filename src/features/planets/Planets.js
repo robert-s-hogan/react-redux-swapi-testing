@@ -2,13 +2,15 @@ import { useCallback, useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPlanetsStatus, fetchPlanets } from './planetsSlice';
 import { usePrefetch, useGetPlanetsQuery } from '../../services/apiPlanets';
+
 import { Loading } from '../../components/Loading';
 import Planet from '../../features/planets/Planet';
+import GridContainer from '../../components/GridContainer';
 
 const PlanetsList = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(6);
+  const [totalPages] = useState(6);
   const planetsStatus = useSelector(getPlanetsStatus);
 
   const { data, isLoading, isFetching } = useGetPlanetsQuery(page);
@@ -32,7 +34,15 @@ const PlanetsList = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, prefetchPrev, planetsStatus, dispatch]);
+  }, [
+    page,
+    totalPages,
+    prefetchNext,
+    prefetchPrev,
+    planetsStatus,
+    dispatch,
+    data,
+  ]);
 
   if (isLoading) {
     return <Loading />;
@@ -49,7 +59,7 @@ const PlanetsList = () => {
           <Loading />
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-4">
+        <GridContainer>
           {data.results.map((planet) => (
             <Planet
               key={planet.name}
@@ -57,7 +67,7 @@ const PlanetsList = () => {
               terrain={planet.terrain}
             />
           ))}
-        </div>
+        </GridContainer>
       )}
       <div className="my-4 flex justify-between items-center text-2xl">
         <button
@@ -85,7 +95,7 @@ const PlanetsList = () => {
 
 export const PlanetsAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl px-4 md:mx-auto my-4">
+    <section className="container max-w-4xl md:mx-auto my-4">
       <PlanetsList />
     </section>
   );

@@ -1,11 +1,12 @@
 import PersonHomeworld from './PersonHomeworld';
+import CardContainer from '../../components/CardContainer';
 
 const Character = ({ name, homeworld }) => {
   return (
-    <article className="my-2">
+    <CardContainer>
       <p className="text-white font-semibold uppercase text-xl">{name}</p>
       <PersonHomeworld homeworld={homeworld} />
-    </article>
+    </CardContainer>
   );
 };
 

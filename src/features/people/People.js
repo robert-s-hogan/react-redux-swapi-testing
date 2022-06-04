@@ -2,8 +2,10 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getPeopleStatus, fetchPeople } from './peopleSlice';
 import { usePrefetch, useGetPeopleQuery } from '../../services/apiPeople';
+
 import { Loading } from '../../components/Loading';
 import Person from './Person';
+import GridContainer from '../../components/GridContainer';
 
 const People = () => {
   const dispatch = useDispatch();
@@ -32,7 +34,15 @@ const People = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, peopleStatus, prefetchPrev, dispatch]);
+  }, [
+    page,
+    totalPages,
+    prefetchNext,
+    peopleStatus,
+    prefetchPrev,
+    dispatch,
+    data,
+  ]);
 
   if (isLoading) {
     return <Loading />;
@@ -49,7 +59,7 @@ const People = () => {
           <Loading />
         </div>
       ) : (
-        <section className="container max-w-4xl px-4 md:mx-auto my-4">
+        <GridContainer>
           {data.results.map((person) => (
             <Person
               key={person.name}
@@ -57,7 +67,7 @@ const People = () => {
               name={person.name}
             />
           ))}
-        </section>
+        </GridContainer>
       )}
       <div className="my-4 flex justify-between items-center text-2xl">
         <button
@@ -85,7 +95,7 @@ const People = () => {
 
 export const PeopleAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl px-4 md:mx-auto my-4">
+    <section className="container max-w-4xl md:mx-auto my-4">
       <People />
     </section>
   );

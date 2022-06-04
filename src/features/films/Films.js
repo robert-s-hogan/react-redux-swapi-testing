@@ -2,13 +2,15 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilmsStatus, fetchFilms } from './filmsSlice';
 import { usePrefetch, useGetFilmsQuery } from '../../services/apiFilms';
+
 import { Loading } from '../../components/Loading';
 import Film from './Film';
+import GridContainer from '../../components/GridContainer';
 
 export const Films = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [totalPages] = useState(1);
   const filmsStatus = useSelector(getFilmsStatus);
 
   const { data, isLoading, isFetching } = useGetFilmsQuery(page);
@@ -32,7 +34,15 @@ export const Films = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, filmsStatus, prefetchPrev, dispatch]);
+  }, [
+    page,
+    totalPages,
+    prefetchNext,
+    filmsStatus,
+    prefetchPrev,
+    dispatch,
+    data,
+  ]);
 
   if (isLoading) {
     return <Loading />;
@@ -45,15 +55,15 @@ export const Films = () => {
   return (
     <div>
       {isFetching ? (
-        <div>
+        <>
           <Loading />
-        </div>
+        </>
       ) : (
-        <section className="container max-w-4xl px-4 md:mx-auto my-4">
+        <GridContainer>
           {data.results.map((film) => (
             <Film key={film.title} title={film.title} />
           ))}
-        </section>
+        </GridContainer>
       )}
       <div className="my-4 flex justify-between items-center text-2xl">
         <button
@@ -82,7 +92,7 @@ export const Films = () => {
 
 export const FilmsAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl px-4 md:mx-auto my-4">
+    <section className="container max-w-4xl md:mx-auto my-4">
       <Films />
     </section>
   );

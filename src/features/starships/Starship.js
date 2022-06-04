@@ -1,8 +1,10 @@
+import CardContainer from '../../components/CardContainer';
+
 const Film = ({ name }) => {
   return (
-    <article className="my-2">
+    <CardContainer>
       <p className="text-white font-semibold uppercase text-xl">{name}</p>
-    </article>
+    </CardContainer>
   );
 };
 

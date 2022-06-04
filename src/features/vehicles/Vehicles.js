@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getVehiclesStatus, fetchVehicles } from './vehiclesSlice';
+import { useDispatch } from 'react-redux'; //useSelector
+import { fetchVehicles } from './vehiclesSlice'; //getVehiclesStatus
 import { usePrefetch, useGetVehiclesQuery } from '../../services/apiVehicles';
+
 import { Loading } from '../../components/Loading';
 import Vehicle from './Vehicle';
+import GridContainer from '../../components/GridContainer';
 
 const Vehicles = () => {
   const dispatch = useDispatch();
@@ -31,7 +33,7 @@ const Vehicles = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, prefetchPrev, dispatch]);
+  }, [page, totalPages, prefetchNext, prefetchPrev, dispatch, data]);
 
   if (isLoading) {
     return <Loading />;
@@ -48,11 +50,11 @@ const Vehicles = () => {
           <Loading />
         </div>
       ) : (
-        <section className="container max-w-4xl px-4 md:mx-auto my-4">
+        <GridContainer>
           {data.results.map((vehicle) => (
             <Vehicle key={vehicle.name} name={vehicle.name} />
           ))}
-        </section>
+        </GridContainer>
       )}
       <div className="my-4 flex justify-between items-center text-2xl">
         <button
@@ -80,7 +82,7 @@ const Vehicles = () => {
 
 export const VehiclesAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl px-4 md:mx-auto my-4">
+    <section className="container max-w-4xl md:mx-auto my-4">
       <Vehicles />
     </section>
   );

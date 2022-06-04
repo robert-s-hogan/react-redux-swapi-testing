@@ -2,13 +2,15 @@ import { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSpeciesStatus, fetchSpecies } from './speciesSlice';
 import { usePrefetch, useGetSpeciesQuery } from '../../services/apiSpecies';
+
 import { Loading } from '../../components/Loading';
 import Specie from './Specie';
+import GridContainer from '../../components/GridContainer';
 
 const Species = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(4);
+  const [totalPages] = useState(4);
   const speciesStatus = useSelector(getSpeciesStatus);
 
   const { data, isLoading, isFetching } = useGetSpeciesQuery(page);
@@ -32,7 +34,15 @@ const Species = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, totalPages, prefetchNext, prefetchPrev, speciesStatus, dispatch]);
+  }, [
+    page,
+    totalPages,
+    prefetchNext,
+    prefetchPrev,
+    speciesStatus,
+    dispatch,
+    data,
+  ]);
 
   if (isLoading) {
     return <Loading />;
@@ -49,7 +59,7 @@ const Species = () => {
           <Loading />
         </div>
       ) : (
-        <section className="container max-w-4xl px-4 md:mx-auto my-4">
+        <GridContainer>
           {data.results.map((specie) => (
             <Specie
               key={specie.name}
@@ -57,7 +67,7 @@ const Species = () => {
               classification={specie.classification}
             />
           ))}
-        </section>
+        </GridContainer>
       )}
       <div className="my-4 flex justify-between items-center text-2xl">
         <button
@@ -85,7 +95,7 @@ const Species = () => {
 
 export const SpeciesAPI = ({ data }) => {
   return (
-    <section className="container max-w-4xl px-4 md:mx-auto my-4">
+    <section className="container max-w-4xl md:mx-auto my-4">
       <Species />
     </section>
   );

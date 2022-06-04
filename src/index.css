@@ -33,7 +33,10 @@
 
 @layer components {
   .letter-box {
-    @apply bg-white text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
+    @apply text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
+  }
+  .active-nav-link {
+    @apply text-white font-semibold rounded-lg px-2 py-1 text-base;
   }
 }
 

@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
 function Navigation() {
   return (
-    <nav className="container max-w-4xl px-4 md:mx-auto my-4 flex items-center justify-between">
+    <nav className="container w-full md:max-w-4xl md:mx-auto my-4">
       <h1 className="text-center my-4 text-white">SWAPI</h1>
-      <ul className="flex items-center justify-between space-x-4 text-white uppercase">
+      <ul className="flex items-center justify-between space-x-2 text-white text-sm md:text-lg">
         <li>
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? 'letter-box bg-purple' : ''
+              isActive ? 'active-nav-link bg-purple' : ''
             }
           >
             People
@@ -18,7 +18,7 @@ function Navigation() {
           <NavLink
             to="planets"
             className={({ isActive }) =>
-              isActive ? 'letter-box bg-orange' : ''
+              isActive ? 'active-nav-link bg-orange' : ''
             }
           >
             Planets
@@ -27,7 +27,7 @@ function Navigation() {
         <li>
           <NavLink to="species">
             {({ isActive }) => (
-              <span className={isActive ? 'letter-box bg-yellow' : ''}>
+              <span className={isActive ? 'active-nav-link bg-yellow' : ''}>
                 Species
               </span>
             )}
@@ -36,7 +36,7 @@ function Navigation() {
         <li>
           <NavLink to="films">
             {({ isActive }) => (
-              <span className={isActive ? 'letter-box bg-green' : ''}>
+              <span className={isActive ? 'active-nav-link bg-green' : ''}>
                 Films
               </span>
             )}
@@ -45,7 +45,7 @@ function Navigation() {
         <li>
           <NavLink to="starships">
             {({ isActive }) => (
-              <span className={isActive ? 'letter-box bg-blue' : ''}>
+              <span className={isActive ? 'active-nav-link bg-blue' : ''}>
                 Starships
               </span>
             )}
@@ -54,7 +54,7 @@ function Navigation() {
         <li>
           <NavLink to="vehicles">
             {({ isActive }) => (
-              <span className={isActive ? 'letter-box bg-red' : ''}>
+              <span className={isActive ? 'active-nav-link bg-red' : ''}>
                 Vehicles
               </span>
             )}

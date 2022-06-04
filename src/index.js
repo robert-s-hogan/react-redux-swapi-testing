@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 
 import { store } from './store';
 
+import App from './App';
 import Navigation from './components/Navigation';
 import People from './features/people/People';
 import Planets from './features/planets/Planets';
@@ -19,16 +20,18 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<People />} />
-        <Route path="planets" element={<Planets />} />
-        <Route path="species" element={<Species />} />
-        <Route path="films" element={<Films />} />
-        <Route path="starships" element={<Starships />} />
-        <Route path="vehicles" element={<Vehicles />} />
-        {/* <Route component={NotFoundPage} /> */}
-      </Routes>
+      <App>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<People />} />
+          <Route path="planets" element={<Planets />} />
+          <Route path="species" element={<Species />} />
+          <Route path="films" element={<Films />} />
+          <Route path="starships" element={<Starships />} />
+          <Route path="vehicles" element={<Vehicles />} />
+          {/* <Route component={NotFoundPage} /> */}
+        </Routes>
+      </App>
     </BrowserRouter>
   </Provider>,
 );
