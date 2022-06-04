@@ -1,10 +1,12 @@
 import { useCallback, useState, useEffect } from 'react';
-import { Loading } from '../../components/Loading';
 
 import { usePrefetch, useGetPlanetsQuery } from '../../services/apiPlanets';
+import { Loading } from '../../components/Loading';
+import Planet from '../../features/planets/Planet';
 
 const PlanetsList = () => {
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(6);
   const { data, isLoading, isFetching } = useGetPlanetsQuery(page);
   const prefetchPage = usePrefetch('getPlanets');
 
@@ -20,24 +22,17 @@ const PlanetsList = () => {
     if (page === 1 && page !== 1) {
       prefetchPrev();
     }
-    if (page !== 6) {
+    if (page !== totalPages) {
       prefetchNext();
     }
-  }, [page, prefetchNext, prefetchPrev]);
+  }, [page, totalPages, prefetchNext, prefetchPrev]);
 
   if (isLoading) {
     return <Loading />;
   }
 
   if (!data) {
-    return (
-      <div>
-        No posts :
-        <code>
-          <pre>{JSON.stringify(data, null, 2)}</pre>
-        </code>
-      </div>
-    );
+    return <div>No posts</div>;
   }
 
   return (
@@ -47,11 +42,15 @@ const PlanetsList = () => {
           <Loading />
         </div>
       ) : (
-        <ul className="text-white text-2xl h-96" spacing={3} mt={6}>
-          {data.results.map(({ name, status }) => (
-            <li key={name}>{name}</li>
+        <div className="grid grid-cols-3 gap-4">
+          {data.results.map((planet) => (
+            <Planet
+              key={planet.name}
+              name={planet.name}
+              terrain={planet.terrain}
+            />
           ))}
-        </ul>
+        </div>
       )}
       <div className="my-4 flex justify-between items-center text-2xl">
         <button
@@ -67,7 +66,7 @@ const PlanetsList = () => {
           onClick={() => setPage((prev) => prev + 1)}
           isLoading={isFetching}
           onMouseEnter={prefetchNext}
-          disabled={page === 6}
+          disabled={page === totalPages}
           className="letter-box bg-orange"
         >
           next

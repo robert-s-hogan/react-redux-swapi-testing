@@ -7,6 +7,7 @@ import starshipsReducer from '../features/starships/starshipsSlice';
 import vehiclesReducer from '../features/vehicles/vehiclesSlice';
 
 import { apiPlanets } from '../services/apiPlanets';
+import { apiPeople } from '../services/apiPeople';
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     starships: starshipsReducer,
     vehicles: vehiclesReducer,
     [apiPlanets.reducerPath]: apiPlanets.reducer,
+    [apiPeople.reducerPath]: apiPeople.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiPlanets.middleware),
