@@ -64,6 +64,12 @@ module.exports = {
       borderB: {
         2: '2px solid',
       },
+      left: {
+        '1/2': '50%',
+      },
+      right: {
+        '1/2': '50%',
+      },
       shadow: {
         xl: '6px 6px 0px 0px #000',
       },

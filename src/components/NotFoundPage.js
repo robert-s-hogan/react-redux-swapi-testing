@@ -4,9 +4,9 @@ import Stormtrooper from '../style/stormtrooper/Stormtrooper';
 const NotFoundPage = () => {
   return (
     <Container>
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:mt-32">
         <Stormtrooper />
-        <div className="flex flex-col justify-center h-full my-auto">
+        <div className="flex flex-col justify-center h-screen md:h-full my-auto">
           <h1 className="text-white uppercase text-2xl">
             This is not the page you're looking for
           </h1>

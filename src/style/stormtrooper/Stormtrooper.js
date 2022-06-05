@@ -2,8 +2,8 @@ import './stormtrooper.scss';
 
 const Stormtrooper = () => {
   return (
-    <div className="stormtrooper-container h-96 w-96 z-0 overflow-hidden relative">
-      <div className="stormtrooper-head h-48 w-48 absolute z-2 top-24 left-24">
+    <div className="stormtrooper-container h-full w-full z-0 relative">
+      <div className="stormtrooper-head h-48 md:h-64 w-48 md:w-64 absolute z-2 mx-auto left-0 md:left-12 right-0">
         <div className="stormtrooper-tophead inherit">
           <div className="stormtrooper-topLeftHead bg-white inherit top-0 left-4 w-20 h-20 rounded-tl-full"></div>
           <div className="stormtrooper-topRightHead bg-stormtrooperHeadGray inherit top-0 left-24 w-20 h-20 rounded-tr-full"></div>
@@ -49,7 +49,7 @@ const Stormtrooper = () => {
         <div className="stormtrooper-leftCircle bg-black h-5 w-5 inherit top-48 left-10 rounded-50% z-3"></div>
         <div className="stormtrooper-rightCircle bg-black h-5 w-5 inherit top-48 left-32 z-5 rounded-50%"></div>
       </div>
-      <div className="stormtrooper-castShadow bg-gradient-to-r from-black to-transparent h-52 w-56 absolute top-44 left-36 z-1 rotate-45"></div>
+      <div className="stormtrooper-castShadow bg-gradient-to-r from-black to-transparent h-48 w-48 absolute mx-auto right-0 left-20 z-1 rotate-45 top-16"></div>
     </div>
   );
 };
