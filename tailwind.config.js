@@ -22,12 +22,19 @@ module.exports = {
       limeGreen: '#b9da10',
       skin: '#ffcd94',
       transparent: 'rgba(0, 0, 0, 0)',
+      stormtrooperGray: '#748494',
+      stormtrooperHeadGray: '#dbdcde',
+      stormtrooperHeadShadowGray: '#b5b7b9',
+      stormtrooperShadowGray: '#5e6974',
     },
     fontFamily: {
       sans: ['Poller One', 'cursive'],
       serif: ['Roboto Flex', 'sans-serif'],
     },
     extend: {
+      position: {
+        inherit: 'inherit',
+      },
       spacing: {
         18: '4.5rem',
         22: '5.5rem',
@@ -48,6 +55,7 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2rem',
+        '50%': '50%',
       },
       border: {
         2: '2px solid',

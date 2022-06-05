@@ -13,6 +13,7 @@ import Species from './features/species/Species';
 import Films from './features/films/Films';
 import Starships from './features/starships/Starships';
 import Vehicles from './features/vehicles/Vehicles';
+import NotFoundPage from './components/NotFoundPage';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,7 +28,7 @@ root.render(
           <Route path="films" element={<Films />} />
           <Route path="starships" element={<Starships />} />
           <Route path="vehicles" element={<Vehicles />} />
-          {/* <Route component={NotFoundPage} /> */}
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </App>
     </BrowserRouter>

@@ -1,0 +1,34 @@
+.stormtrooper-head {
+  .stormtrooper-eyeContainer {
+    .stormtrooper-eyeContainerLeft {
+      .stormtrooper-leftEye {
+        clip-path: polygon(100% 0, 0 0, 15% 35%);
+      }
+    }
+    .stormtrooper-eyeContainerRight {
+      .stormtrooper-rightEye {
+        clip-path: polygon(100% 0, 0 0, 85% 35%);
+      }
+    }
+  }
+  .stormtrooper-lowerFace {
+    .stormtrooper-leftCheek {
+      border-radius: 80% 0 0 40%;
+    }
+    .stormtrooper-rightCheek {
+      border-radius: 0 80% 40% 0;
+    }
+  }
+  .stormtrooper-mouth {
+    .stormtrooper-mouthLeft {
+      .stormtrooper-triangleLeft {
+        clip-path: polygon(0 100%, 100% 0, 100% 100%);
+      }
+    }
+    .stormtrooper-mouthRight {
+      .stormtrooper-triangleRight {
+        clip-path: polygon(0 100%, 0 0, 100% 100%);
+      }
+    }
+  }
+}

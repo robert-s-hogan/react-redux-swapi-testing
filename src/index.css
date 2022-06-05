@@ -242,3 +242,7 @@ button[disabled],
     opacity: 0.1;
   }
 }
+
+.inherit {
+  position: inherit;
+}
