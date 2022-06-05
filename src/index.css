@@ -33,7 +33,7 @@
 
 @layer components {
   .letter-box {
-    @apply text-white font-bold border-black rounded-lg px-4 py-2 text-3xl;
+    @apply text-white font-bold border-black rounded-lg text-3xl;
   }
   .active-nav-link {
     @apply text-white font-semibold rounded-lg px-2 py-1 text-base;
@@ -245,4 +245,8 @@ button[disabled],
 
 .inherit {
   position: inherit;
+}
+
+.bg-unknown {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }

@@ -1,0 +1,17 @@
+ul.trees2 li {
+  width: 0px;
+  display: block;
+  height: 0px;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 400px solid #371c3b;
+  border-top: 0px solid transparent;
+  position: absolute;
+  bottom: -50px;
+  animation: wind 10s ease-in-out infinite;
+}
+@keyframes wind {
+  50% {
+    transform: rotate(10deg);
+  }
+}

@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Container from './Container';
 
 function Navigation() {
   return (
     <nav className="container w-full md:max-w-4xl md:mx-auto my-4">
-      <h1 className="text-center my-4 text-white">SWAPI</h1>
+      <h1 className="text-center my-4 text-white">
+        <Link to="/">SWAPI</Link>
+      </h1>
       <Container>
         <ul className="flex items-center justify-between space-x-2 text-white text-sm md:text-lg">
           <li>

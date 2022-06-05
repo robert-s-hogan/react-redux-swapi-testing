@@ -1,25 +1,55 @@
 import { useState, useEffect } from 'react';
 
-const Planet = ({ name, terrain }) => {
+import PlanetAtmosphere from './planetComponents/PlanetAtmosphere';
+import PlanetTerrain from './planetComponents/PlanetTerrain';
+import PlanetSurface from './planetComponents/PlanetSurface';
+
+const Planet = ({
+  name,
+  terrain,
+  climate,
+  rotation,
+  diameter,
+  surface_water,
+}) => {
   const [terrainSplit, setTerrainSplit] = useState([]);
+  const [climateSplit, setClimateSplit] = useState([]);
 
   useEffect(() => {
-    setTerrainSplit(terrain.split(','));
-  }, [terrain]);
+    const removeTemperateClimate = (item) => {
+      setClimateSplit(climate.split(', '));
+      setClimateSplit((climateSplit) =>
+        climateSplit.filter((climate) => climate !== 'temperate'),
+      );
+    };
+    removeTemperateClimate(terrainSplit);
+    setTerrainSplit(terrain.split(''));
+  }, [terrain, climate, setTerrainSplit]);
 
   return (
-    <>
-      <h3 className="text-center right-0 m-0 uppercase text-2xl font-light pr-6 text-white">
-        {name}
-      </h3>
-      <p className="text-white text-center text-lg">
-        {terrainSplit.map((terrain, index) => (
-          <span key={index} className="inline-block mr-2">
-            {terrain}
-          </span>
-        ))}
-      </p>
-    </>
+    <div className="h-96 mx-auto bg w-full relative">
+      <PlanetAtmosphere
+        primaryClimate={climateSplit[0]}
+        secondaryClimate={climateSplit[1]}
+        tertiaryClimate={climateSplit[2]}
+        name={name}
+        rotation={rotation}
+        diameter={diameter}
+        surface_water={surface_water}
+      />
+      <PlanetTerrain
+        primarySurface={terrainSplit[0]}
+        secondarySurface={terrainSplit[1]}
+        tertiarySurface={terrainSplit[2]}
+        quaternarySurface={terrainSplit[3]}
+      />
+      <PlanetSurface
+        primarySurface={terrainSplit[0]}
+        secondarySurface={terrainSplit[1]}
+        tertiarySurface={terrainSplit[2]}
+        quaternarySurface={terrainSplit[3]}
+      />
+    </div>
   );
 };
 

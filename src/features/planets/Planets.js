@@ -69,6 +69,10 @@ const PlanetsList = () => {
                 key={planet.name}
                 name={planet.name}
                 terrain={planet.terrain}
+                climate={planet.climate}
+                rotation={planet.rotation_period}
+                diameter={planet.diameter}
+                surface_water={planet.surface_water}
               />
             </CardContainer>
           ))}
