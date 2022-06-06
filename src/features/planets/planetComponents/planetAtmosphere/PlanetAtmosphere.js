@@ -1,4 +1,9 @@
-import '../../../style/planetBackground.css';
+import { useState, useEffect } from 'react';
+import RandomNumberInRange from '../../../../lib/RandomNumberInRange';
+
+import PlanetAtmosphereSunPosition from './PlanetAtmosphereSunPosition';
+import PlanetAtmosphereSunSize from './PlanetAtmosphereSunSize';
+import '../../../../style/planetBackground.css';
 
 const PlanetAtmosphere = ({
   primaryClimate,
@@ -9,6 +14,14 @@ const PlanetAtmosphere = ({
   diameter,
   surface_water,
 }) => {
+  const [sunSize, setSunSize] = useState(0);
+  const [sunPosition, setSunPosition] = useState(0);
+
+  useEffect(() => {
+    setSunSize(RandomNumberInRange(2, 24));
+    setSunPosition(RandomNumberInRange(0, 24));
+  }, []);
+
   let findPrimaryClimate = (primaryClimate) => {
     try {
       switch (primaryClimate.trim()) {
@@ -157,86 +170,6 @@ const PlanetAtmosphere = ({
       console.log(error);
     }
   };
-  let sunSize = (diameter) => {
-    if (diameter > 20000) {
-      return 'h-24 w-24';
-    } else if (diameter > 17500) {
-      return 'h-20 w-20';
-    } else if (diameter > 15000) {
-      return 'h-16 w-16';
-    } else if (diameter > 12500) {
-      return 'h-14 w-14';
-    } else if (diameter > 10000) {
-      return 'h-12 w-12';
-    } else if (diameter > 7500) {
-      return 'h-10 w-10';
-    } else if (diameter > 5000) {
-      return 'h-8 w-8';
-    }
-  };
-
-  let sunPosition = (surface_water) => {
-    console.log(surface_water);
-    if (surface_water > 100) {
-      return 'top-4 left-12';
-    } else if (surface_water > 80) {
-      return '-top-4 left-24';
-    } else if (surface_water > 60) {
-      return 'top-12 left-36';
-    } else if (surface_water > 40) {
-      return 'top-8 left-48';
-    } else if (surface_water > 20) {
-      return 'top-20 right-36';
-    } else if (surface_water > 15) {
-      return '-top-2 right-24';
-    } else if (surface_water > 10) {
-      return 'top-24 right-36';
-    } else if (surface_water > 5) {
-      return 'top-16 right-48';
-    } else if (surface_water >= 1) {
-      return 'top-8 right-24';
-    } else {
-      return 'top-0 right-0';
-    }
-  };
-
-  let sunBrightness = (primaryClimate) => {
-    try {
-      switch (primaryClimate.trim()) {
-        case 'arid':
-        case 'plateaus':
-        case 'rocky':
-        case 'windy':
-          return 'brightness-200 opacity-90';
-        case 'arctic':
-        case 'artic':
-        case 'subartic':
-        case 'artificial temperate':
-          return 'brightness-150 opacity-100';
-        case 'frigid':
-        case 'frozen':
-          return 'brightness-110 opacity-100';
-        case 'gas':
-        case 'humid':
-        case 'moist':
-        case 'tropical':
-        case 'rainforests':
-          return 'brightness-75 opacity-100';
-        case 'hot':
-          return 'brightness-200 opacity-100';
-        case 'polluted':
-        case 'murky':
-        case 'toxic cloudsea':
-          return 'brightness-25 opacity-80';
-        case 'superheated':
-          return 'brightness-200 opacity-70';
-        default:
-          return 'brightness-100 opacity-100';
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <div
@@ -263,13 +196,11 @@ const PlanetAtmosphere = ({
       <h3 className="right-0 m-0 uppercase text-xl p-2 font-light text-white z-3 absolute">
         {name}
       </h3>
-      {diameter && (
-        <div
-          className={`bg-yellow absolute ${sunBrightness(
-            primaryClimate,
-          )} ${sunPosition(surface_water)} rounded-full ${sunSize(diameter)}`}
-        ></div>
-      )}
+      <PlanetAtmosphereSunPosition
+        className={`left-${sunPosition} top-${sunPosition}`}
+      >
+        <PlanetAtmosphereSunSize className={`h-${sunSize} w-${sunSize}`} />
+      </PlanetAtmosphereSunPosition>
       {secondaryClimate && (
         <div className="z-4 absolute top-6">
           {findSecondaryClimate(secondaryClimate)}

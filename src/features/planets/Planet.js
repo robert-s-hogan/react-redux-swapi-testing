@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import PlanetAtmosphere from './planetComponents/PlanetAtmosphere';
+import PlanetAtmosphere from './planetComponents/planetAtmosphere/PlanetAtmosphere';
 import PlanetTerrain from './planetComponents/PlanetTerrain';
 import PlanetSurface from './planetComponents/PlanetSurface';
 
