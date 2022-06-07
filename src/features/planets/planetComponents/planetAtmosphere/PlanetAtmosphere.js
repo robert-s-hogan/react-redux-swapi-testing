@@ -3,6 +3,7 @@ import RandomNumberInRange from '../../../../lib/RandomNumberInRange';
 
 import PlanetAtmosphereSunPosition from './PlanetAtmosphereSunPosition';
 import PlanetAtmosphereSunSize from './PlanetAtmosphereSunSize';
+import PlanetAtmosphereSun from './PlanetAtmosphereSun';
 import '../../../../style/planetBackground.css';
 
 const PlanetAtmosphere = ({
@@ -18,7 +19,7 @@ const PlanetAtmosphere = ({
   const [sunPosition, setSunPosition] = useState(0);
 
   useEffect(() => {
-    setSunSize(RandomNumberInRange(2, 24));
+    setSunSize(RandomNumberInRange(8, 24));
     setSunPosition(RandomNumberInRange(0, 24));
   }, []);
 
@@ -177,13 +178,6 @@ const PlanetAtmosphere = ({
         primaryClimate,
       )} text-black z-1 overflow-hidden`}
     >
-      {/* <code className="text-xs absolute text-white top-5 z-5">
-        {JSON.stringify(
-          { primaryClimate, secondaryClimate, tertiaryClimate },
-          null,
-          2,
-        )}
-      </code> */}
       {primaryClimate && (
         <div
           className={`absolute z-3 top-0 h-90 w-full text-white ${findPrimaryClimate(
@@ -196,11 +190,17 @@ const PlanetAtmosphere = ({
       <h3 className="right-0 m-0 uppercase text-xl p-2 font-light text-white z-3 absolute">
         {name}
       </h3>
-      <PlanetAtmosphereSunPosition
-        className={`left-${sunPosition} top-${sunPosition}`}
-      >
-        <PlanetAtmosphereSunSize className={`h-${sunSize} w-${sunSize}`} />
-      </PlanetAtmosphereSunPosition>
+      {primaryClimate !== 'unknown' && (
+        <PlanetAtmosphereSunPosition
+          className={`absolute left-${sunPosition} top-${sunPosition} border-20 border-white overflow-hidden h-${
+            sunSize + 20
+          } w-${
+            sunSize + 20
+          } mx-auto rounded-full opacity-90 shadow-sun-container`}
+        >
+          <PlanetAtmosphereSun height={sunSize} width={sunSize} />
+        </PlanetAtmosphereSunPosition>
+      )}
       {secondaryClimate && (
         <div className="z-4 absolute top-6">
           {findSecondaryClimate(secondaryClimate)}
