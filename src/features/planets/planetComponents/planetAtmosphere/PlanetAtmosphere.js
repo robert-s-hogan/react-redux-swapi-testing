@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import RandomNumberInRange from '../../../../lib/RandomNumberInRange';
 
 import PlanetAtmosphereSunPosition from './PlanetAtmosphereSunPosition';
-import PlanetAtmosphereSunSize from './PlanetAtmosphereSunSize';
 import PlanetAtmosphereSun from './PlanetAtmosphereSun';
 import '../../../../style/planetBackground.css';
 
@@ -11,9 +10,6 @@ const PlanetAtmosphere = ({
   secondaryClimate,
   tertiaryClimate,
   name,
-  rotation,
-  diameter,
-  surface_water,
 }) => {
   const [sunSize, setSunSize] = useState(0);
   const [sunPosition, setSunPosition] = useState(0);
@@ -25,7 +21,7 @@ const PlanetAtmosphere = ({
 
   let findPrimaryClimate = (primaryClimate) => {
     try {
-      switch (primaryClimate.trim()) {
+      switch (primaryClimate) {
         case 'airless asteroid':
           return primaryClimate;
         case 'arid':
@@ -73,7 +69,7 @@ const PlanetAtmosphere = ({
   };
   let findSecondaryClimate = (secondaryClimate) => {
     try {
-      switch (secondaryClimate.trim()) {
+      switch (secondaryClimate) {
         case 'airless asteroid':
           return secondaryClimate;
         case 'arid':
@@ -123,7 +119,7 @@ const PlanetAtmosphere = ({
   };
   let findTertiaryClimate = (tertiaryClimate) => {
     try {
-      switch (tertiaryClimate.trim()) {
+      switch (tertiaryClimate) {
         case 'airless asteroid':
           return tertiaryClimate;
         case 'arid':

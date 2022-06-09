@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 import PlanetAtmosphere from './planetComponents/planetAtmosphere/PlanetAtmosphere';
 import PlanetTerrain from './planetComponents/PlanetTerrain';
-import PlanetSurface from './planetComponents/PlanetSurface';
 
 const Planet = ({
   name,
@@ -14,6 +13,8 @@ const Planet = ({
 }) => {
   const [terrainSplit, setTerrainSplit] = useState([]);
   const [climateSplit, setClimateSplit] = useState([]);
+  const [primarySurface, setPrimarySurface] = useState('');
+  const [secondarySurface, setSecondarySurface] = useState('');
 
   useEffect(() => {
     const removeTemperateClimate = (item) => {
@@ -23,8 +24,9 @@ const Planet = ({
       );
     };
     removeTemperateClimate(terrainSplit);
-    setTerrainSplit(terrain.split(''));
-  }, [terrain, climate, setTerrainSplit]);
+    setTerrainSplit(terrain.split(', '));
+    setPrimarySurface(terrainSplit[0]);
+  }, [terrain, climate, setTerrainSplit, primarySurface]);
 
   return (
     <div className="h-96 mx-auto bg w-full relative">
@@ -33,21 +35,13 @@ const Planet = ({
         secondaryClimate={climateSplit[1]}
         tertiaryClimate={climateSplit[2]}
         name={name}
-        rotation={rotation}
-        diameter={diameter}
-        surface_water={surface_water}
       />
       <PlanetTerrain
         primarySurface={terrainSplit[0]}
         secondarySurface={terrainSplit[1]}
         tertiarySurface={terrainSplit[2]}
         quaternarySurface={terrainSplit[3]}
-      />
-      <PlanetSurface
-        primarySurface={terrainSplit[0]}
-        secondarySurface={terrainSplit[1]}
-        tertiarySurface={terrainSplit[2]}
-        quaternarySurface={terrainSplit[3]}
+        terrain={terrainSplit}
       />
     </div>
   );
