@@ -73,6 +73,7 @@ module.exports = {
       rotate: {
         8: '8deg',
         '-8': '-8deg',
+        215: '215deg',
       },
       borderRadius: {
         '4xl': '2rem',
@@ -248,6 +249,7 @@ module.exports = {
         41: '10.25rem;',
         42: '10.5rem;',
         43: '10.75rem;',
+        93: '23.25rem;',
       },
       width: {
         4.5: '1.125rem',

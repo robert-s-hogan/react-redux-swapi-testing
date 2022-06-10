@@ -1,0 +1,64 @@
+.cliffTop {
+  border-top: 120px solid #678ec5;
+  border-right: 3000px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 320px solid transparent;
+}
+
+.cliffShadow {
+  border-top: 324px solid #111e31;
+  border-right: 0 solid transparent;
+  border-bottom: 16px solid transparent;
+  border-left: 77px solid transparent;
+}
+
+.bg-grasslands,
+.bg-grassy {
+  fill: #4eda12;
+}
+
+.bg-mountain {
+  fill: #622c22;
+}
+
+.bg-desert {
+  fill: #d6b995;
+}
+
+.bg-ice {
+  fill: #fff;
+}
+
+.bg-water {
+  fill: #0c0cdb;
+}
+
+.bg-jungle,
+.bg-jungles,
+.bg-rainforest,
+.bg-rainforests,
+.bg-forests,
+.bg-forest {
+  fill: darkgreen;
+}
+
+.bg-cave {
+  fill: black;
+}
+
+.planet {
+  -webkit-animation: rotatePlanet 85s linear infinite;
+  animation: rotatePlanet 85s linear infinite;
+  background: url(http://orig15.deviantart.net/0aba/f/2016/326/0/2/saturn_texture_map_by_jcpag2010-dapbi6l.jpg);
+  -webkit-transform: scale(0.83);
+  transform: scale(0.83);
+}
+
+@keyframes rotatePlanet {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 200% 0%;
+  }
+}

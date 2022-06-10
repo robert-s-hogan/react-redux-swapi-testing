@@ -170,7 +170,9 @@ const PlanetAtmosphere = ({
 
   return (
     <div
-      className={`planet-background-top-third absolute h-90 w-full bg-skyBlue bg-${findPrimaryClimate(
+      className={`planet-background-top-third absolute h-93 overflow-y-hidden w-full ${
+        name === 'Bespin' ? 'bg-unknown' : 'bg-skyBlue'
+      } bg-${findPrimaryClimate(
         primaryClimate,
       )} text-black z-1 overflow-hidden`}
     >
@@ -186,7 +188,7 @@ const PlanetAtmosphere = ({
       <h3 className="right-0 m-0 uppercase text-xl p-2 font-light text-white z-3 absolute">
         {name}
       </h3>
-      {primaryClimate !== 'unknown' && (
+      {primaryClimate !== 'unknown' && name !== 'Bespin' && (
         <PlanetAtmosphereSunPosition
           className={`absolute left-${sunPosition} top-${sunPosition} border-20 border-white overflow-hidden h-${
             sunSize + 20

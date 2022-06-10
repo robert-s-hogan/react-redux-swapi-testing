@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import PlanetAtmosphere from './planetComponents/planetAtmosphere/PlanetAtmosphere';
-import PlanetTerrain from './planetComponents/PlanetTerrain';
+import PlanetTerrain from './planetComponents/planetTerrain/PlanetTerrain';
 
 const Planet = ({
   name,
