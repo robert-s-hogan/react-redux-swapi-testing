@@ -29,7 +29,7 @@ const Planet = ({
   }, [terrain, climate, setTerrainSplit, primarySurface]);
 
   return (
-    <div className="h-96 mx-auto bg w-full relative">
+    <div className="h-93 mx-auto bg w-full relative">
       <PlanetAtmosphere
         primaryClimate={climateSplit[0]}
         secondaryClimate={climateSplit[1]}

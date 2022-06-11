@@ -3,6 +3,8 @@ import Grass from './terrainSurface/Grass';
 import Ice from './terrainSurface/Ice';
 import Mountain from './terrainSurface/Mountain';
 import Ocean from './terrainSurface/Ocean';
+import Plains from './terrainSurface/Plains';
+import Swamp from './terrainSurface/Swamp';
 import Unknown from './terrainSurface/Unknown';
 import './PlanetTerrain.css';
 
@@ -43,10 +45,30 @@ const PlanetTerrain = ({ terrain }) => {
     const pickedTerrain = terrainSurface.includes('gas');
     return pickedTerrain;
   });
+  const plainSurfaces = terrain.filter((terrainSurface) => {
+    const pickedTerrain = terrainSurface.includes('plain');
+    return pickedTerrain;
+  });
+  const rangeSurfaces = terrain.filter((terrainSurface) => {
+    const pickedTerrain = terrainSurface.includes('range');
+    return pickedTerrain;
+  });
+  const swampSurfaces = terrain.filter((terrainSurface) => {
+    const pickedTerrain = terrainSurface.includes('swamp');
+    return pickedTerrain;
+  });
+  const hillSurfaces = terrain.filter((terrainSurface) => {
+    const pickedTerrain = terrainSurface.includes('hill');
+    return pickedTerrain;
+  });
+  const hillsSurfaces = terrain.filter((terrainSurface) => {
+    const pickedTerrain = terrainSurface.includes('hills');
+    return pickedTerrain;
+  });
 
   return (
     <div
-      className={`planet-background-middle-third relative h-66 w-full top-28 text-black z-1 overflow-y-hidden`}
+      className={`planet-background-middle-third relative h-93 w-full top-0 text-black z-1 overflow-y-hidden`}
     >
       {mountainSurfaces.map((mountainSurface) => {
         return (
@@ -57,7 +79,16 @@ const PlanetTerrain = ({ terrain }) => {
           />
         );
       })}
-
+      {rangeSurfaces.map((rangeSurface) => {
+        return (
+          <Mountain
+            key={rangeSurface}
+            className={`mountain absolute h-full -bottom-4 z-2`}
+            surfaceColor={rangeSurface}
+            range={true}
+          />
+        );
+      })}
       {grassSurfaces.map((grassSurface) => {
         return (
           <Grass
@@ -67,17 +98,54 @@ const PlanetTerrain = ({ terrain }) => {
           />
         );
       })}
-
+      {hillSurfaces.map((hillSurface) => {
+        return (
+          <Grass
+            key={hillSurface}
+            className={`hill absolute h-full -bottom-4 z-2`}
+            surfaceColor={hillSurface}
+            hill={true}
+          />
+        );
+      })}
+      {hillsSurfaces.map((hillsSurface) => {
+        return (
+          <Grass
+            key={hillsSurface}
+            className={`hill absolute h-full -bottom-4 z-2`}
+            surfaceColor={hillsSurface}
+            hill={true}
+          />
+        );
+      })}
+      {swampSurfaces.map((swampSurface) => {
+        return (
+          <Swamp
+            key={swampSurface}
+            className={`swamp absolute h-full bottom-0 z-3`}
+            surfaceColor={swampSurface}
+          />
+        );
+      })}
+      {plainSurfaces.map((plainSurface) => {
+        return (
+          <Plains
+            key={plainSurface}
+            className={`plains absolute h-full bottom-0 z-3`}
+            surfaceColor={plainSurface}
+          />
+        );
+      })}
       {jungleSurfaces.map((jungleSurface) => {
         return (
           <Grass
             key={jungleSurface}
             className={`jungle absolute h-full bottom-0 z-3`}
             surfaceColor={jungleSurface}
+            jungle={true}
           />
         );
       })}
-
       {forestSurfaces.map((forestSurface) => {
         return (
           <Grass
@@ -88,7 +156,6 @@ const PlanetTerrain = ({ terrain }) => {
           />
         );
       })}
-
       {oceanSurfaces.map((oceanSurface) => {
         return (
           <Ocean
@@ -98,7 +165,6 @@ const PlanetTerrain = ({ terrain }) => {
           />
         );
       })}
-
       {iceSurfaces.map((iceSurface) => {
         return (
           <Ice
@@ -119,7 +185,6 @@ const PlanetTerrain = ({ terrain }) => {
           />
         );
       })}
-
       {unknownSurfaces.map((unknownSurfaces) => {
         return (
           <Unknown
@@ -129,7 +194,6 @@ const PlanetTerrain = ({ terrain }) => {
           />
         );
       })}
-
       {desertSurfaces.map((desertSurface) => {
         return (
           <Desert

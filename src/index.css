@@ -151,9 +151,6 @@ body {
 .bg-pale {
   background: #fdf5e2;
 }
-.bg-hazel {
-  background: #637f19;
-}
 .bg-metal {
   background-color: #5b6467;
   background-image: linear-gradient(315deg, #5b6467 0%, #8b939a 74%);
@@ -176,11 +173,6 @@ body {
 .bg-naboo {
   background: linear-gradient(to bottom, #1111de 0%, #0cdad0 70%, #0cdad0 100%);
 }
-.tree {
-  clip-path: polygon(50% 0%, 22% 100%, 75% 100%);
-  box-shadow: 2px 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 button[disabled],
 .disabled {
   opacity: 0.5;

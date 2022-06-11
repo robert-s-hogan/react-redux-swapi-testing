@@ -1,7 +1,7 @@
 const Ocean = ({ surfaceColor }) => {
   return (
     <>
-      <p>{surfaceColor}</p>
+      <p>Ocean: {surfaceColor}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`bottom-hill-container h-full absolute bottom-0 -z-1 ${

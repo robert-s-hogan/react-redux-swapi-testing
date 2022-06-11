@@ -3,7 +3,7 @@ import Cave from '../terrainObjects/Cave';
 const Ice = ({ surfaceColor, cave }) => {
   return (
     <>
-      <p>{surfaceColor}</p>
+      <p>Ice: {surfaceColor}</p>
 
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const Ice = ({ surfaceColor, cave }) => {
       {cave && (
         <Cave
           surfaceColor={surfaceColor}
-          styles={`absolute bottom-12 right-48 rotate-45`}
+          styles={`absolute bottom-16 -right-4 rotate-45`}
         />
       )}
     </>

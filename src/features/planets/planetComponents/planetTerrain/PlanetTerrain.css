@@ -33,6 +33,13 @@
   fill: #0c0cdb;
 }
 
+.bg-plains {
+  fill: #637f19;
+}
+
+.bg-palm-tree {
+  fill: #5f5d36;
+}
 .bg-jungle,
 .bg-jungles,
 .bg-rainforest,
@@ -44,6 +51,9 @@
 
 .bg-cave {
   fill: black;
+}
+.bg-tree {
+  fill: #014421;
 }
 
 .planet {

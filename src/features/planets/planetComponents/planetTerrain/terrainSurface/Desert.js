@@ -1,7 +1,7 @@
 const Desert = ({ surfaceColor }) => {
   return (
     <>
-      <p>{surfaceColor}</p>
+      <p>desert: {surfaceColor}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`bottom-hill-container h-full absolute -bottom-16 -z-1 ${
