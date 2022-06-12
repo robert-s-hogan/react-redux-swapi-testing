@@ -13,32 +13,50 @@
 }
 
 .bg-grasslands,
-.bg-grassy {
+.bg-grassy,
+.bg-grass {
   fill: #4eda12;
 }
 
 .bg-mountain {
   fill: #622c22;
 }
-
-.bg-desert {
-  fill: #d6b995;
+.bg-sinkhole,
+.bg-sinkholes {
+  fill: #4b716f;
 }
 
-.bg-ice {
-  fill: #fff;
+.bg-savanna {
+  fill: #d1a36e;
 }
-
-.bg-water {
+.bg-canyon,
+.bg-canyons {
+  fill: #813e24;
+}
+.bg-dirt {
+  fill: #7a573b;
+}
+.bg-water,
+.bg-lake {
   fill: #0c0cdb;
 }
-
+.bg-murky {
+  background: #978d7e;
+}
 .bg-plains {
   fill: #637f19;
 }
-
+.bg-cityscape {
+  fill: darkgray;
+}
 .bg-palm-tree {
   fill: #5f5d36;
+}
+.plant {
+  fill: #99bf86;
+}
+.tree {
+  fill: #059954;
 }
 .bg-jungle,
 .bg-jungles,
@@ -47,6 +65,9 @@
 .bg-forests,
 .bg-forest {
   fill: darkgreen;
+}
+.bg-swamp {
+  fill: #092e2d;
 }
 
 .bg-cave {

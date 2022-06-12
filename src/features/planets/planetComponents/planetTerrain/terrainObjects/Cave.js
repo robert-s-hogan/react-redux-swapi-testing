@@ -1,10 +1,10 @@
 const Cave = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p>Cave: {surfaceColor}</p>
+      <p className="">Cave: {surfaceColor}</p>
       <svg
         id="sw-js-blob-svg"
-        className={`z-10 h-1/3 bg-cave ${styles}`}
+        className={`z-10 h-1/3 bg-cave absolute bottom-16 -right-4 lg:right-24 lg:bottom-20 2xl:bottom-0 2xl:-right-12 rotate-45 ${styles}`}
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
       >

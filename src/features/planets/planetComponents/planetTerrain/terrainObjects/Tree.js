@@ -1,7 +1,7 @@
 const Tree = ({ surfaceColor, styles }) => {
   return (
     <svg
-      className={`tree z-10 h-full bg-tree ${styles}`}
+      className={`tree z-5 h-full bg-tree ${styles}`}
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 300.000000 200.000000"

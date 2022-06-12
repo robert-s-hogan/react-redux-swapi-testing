@@ -14,7 +14,39 @@ const Planet = ({
   const [terrainSplit, setTerrainSplit] = useState([]);
   const [climateSplit, setClimateSplit] = useState([]);
   const [primarySurface, setPrimarySurface] = useState('');
-  const [secondarySurface, setSecondarySurface] = useState('');
+
+  async function getTerrainSplit() {
+    const terrainSplit = terrain.split(', ');
+    const surfaceArray = terrainSplit.filter((word, index, arr) => {
+      if (word === 'desert' || word === 'barren') {
+        console.log(`dry: ${word}`);
+        return 'dry';
+      } else if (
+        word === 'ocean' ||
+        word === 'sea' ||
+        word === 'seas' ||
+        word === 'oceans' ||
+        word === 'toxic seacloud'
+      ) {
+        console.log(`water: ${word}`);
+        return 'water';
+      } else if (word === 'tundra' || word === 'ice') {
+        console.log(`ice: ${word}`);
+        return 'ice';
+      } else if (
+        word === 'grass' ||
+        word === 'grasslands' ||
+        word === 'grassy hills'
+      ) {
+        console.log(`grass: ${word}`);
+        return 'grass';
+      } else if (word === 'ash' || word === 'asteroid') {
+        console.log(`ash: ${word}`);
+        return 'ash';
+      }
+    });
+    setTerrainSplit(terrainSplit);
+  }
 
   useEffect(() => {
     const removeTemperateClimate = (item) => {
@@ -24,9 +56,9 @@ const Planet = ({
       );
     };
     removeTemperateClimate(terrainSplit);
-    setTerrainSplit(terrain.split(', '));
     setPrimarySurface(terrainSplit[0]);
-  }, [terrain, climate, setTerrainSplit, primarySurface]);
+    getTerrainSplit(terrain);
+  }, [terrain, climate, setTerrainSplit]);
 
   return (
     <div className="h-93 mx-auto bg w-full relative">
@@ -36,13 +68,7 @@ const Planet = ({
         tertiaryClimate={climateSplit[2]}
         name={name}
       />
-      <PlanetTerrain
-        primarySurface={terrainSplit[0]}
-        secondarySurface={terrainSplit[1]}
-        tertiarySurface={terrainSplit[2]}
-        quaternarySurface={terrainSplit[3]}
-        terrain={terrainSplit}
-      />
+      <PlanetTerrain terrain={terrainSplit} />
     </div>
   );
 };
