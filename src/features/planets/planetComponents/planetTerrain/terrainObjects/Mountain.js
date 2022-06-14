@@ -1,7 +1,7 @@
 import MountainBottom from './MountainBottom';
 import MountainMiddle from './MountainMiddle';
 import MountainTop from './MountainTop';
-import Cityscape from './Cityscape';
+// import Cityscape from './Cityscape';
 
 const Mountain = ({ surfaceColor, cityscape, styles }) => {
   return (
@@ -18,9 +18,9 @@ const Mountain = ({ surfaceColor, cityscape, styles }) => {
         styles={`h-full absolute -bottom-16 -left-2 z-2 ${styles}`}
         surfaceColor={surfaceColor}
       />
-      {cityscape && (
+      {/* {cityscape && (
         <Cityscape cityscape={cityscape} surfaceColor={surfaceColor} />
-      )}
+      )} */}
     </>
   );
 };

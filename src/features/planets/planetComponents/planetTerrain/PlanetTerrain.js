@@ -8,31 +8,65 @@ import './PlanetTerrain.css';
 
 const PlanetTerrain = ({ terrain }) => {
   const ashSurfaces = terrain.filter((terrainSurface) => {
-    const pickedTerrain = terrainSurface.includes('ash');
+    const pickedTerrain =
+      terrainSurface.includes('ash') ||
+      terrainSurface.includes('volcanoes') ||
+      terrainSurface.includes('volcano') ||
+      terrainSurface.includes('airless asteroid');
     return pickedTerrain;
   });
   const drySurfaces = terrain.filter((terrainSurface) => {
     const pickedTerrain =
-      terrainSurface.includes('desert') || terrainSurface.includes('barren');
+      terrainSurface.includes('desert') ||
+      terrainSurface.includes('deserts') ||
+      terrainSurface.includes('barren') ||
+      terrainSurface.includes('rocky');
     return pickedTerrain;
   });
   const grassSurfaces = terrain.filter((terrainSurface) => {
     const pickedTerrain =
       terrainSurface.includes('grass') ||
+      terrainSurface.includes('grasslands') ||
+      terrainSurface.includes('grassy hills') ||
+      terrainSurface.includes('verdant') ||
+      terrainSurface.includes('savanna') ||
+      terrainSurface.includes('scrublands') ||
       terrainSurface.includes('jungle') ||
-      terrainSurface.includes('forest');
+      terrainSurface.includes('jungles') ||
+      terrainSurface.includes('forest') ||
+      terrainSurface.includes('forests') ||
+      terrainSurface.includes('swamp') ||
+      terrainSurface.includes('swamps') ||
+      terrainSurface.includes('cityscape') ||
+      terrainSurface.includes('urban');
+
     return pickedTerrain;
   });
   const iceSurfaces = terrain.filter((terrainSurface) => {
-    const pickedTerrain = terrainSurface.includes('ice');
+    const pickedTerrain =
+      terrainSurface.includes('ice') ||
+      terrainSurface.includes('tundra') ||
+      terrainSurface.includes('tundras') ||
+      terrainSurface.includes('glaciers');
     return pickedTerrain;
   });
   const spaceSurfaces = terrain.filter((terrainSurface) => {
-    const pickedTerrain = terrainSurface.includes('space');
+    const pickedTerrain =
+      terrainSurface.includes('space') ||
+      terrainSurface.includes('asteroid') ||
+      terrainSurface.includes('asteroids') ||
+      terrainSurface.includes('gas giant') ||
+      terrainSurface.includes('unknown');
     return pickedTerrain;
   });
   const waterSurfaces = terrain.filter((terrainSurface) => {
-    const pickedTerrain = terrainSurface.includes('water');
+    const pickedTerrain =
+      terrainSurface.includes('water') ||
+      terrainSurface.includes('ocean') ||
+      terrainSurface.includes('sea') ||
+      terrainSurface.includes('seas') ||
+      terrainSurface.includes('oceans') ||
+      terrainSurface.includes('toxic seacloud');
     return pickedTerrain;
   });
 
@@ -40,22 +74,21 @@ const PlanetTerrain = ({ terrain }) => {
     <div
       className={`planet-terrain relative h-93 w-full top-0 text-black z-1 overflow-y-hidden`}
     >
-      {ashSurfaces.map((ashSurface) => {
-        return (
-          <Ash
-            key={ashSurface}
-            className={`bottom-Grass absolute h-full top-0 z-3`}
-            surfaceColor={ashSurface}
-          />
-        );
-      })}
-
       {drySurfaces.map((drySurface) => {
         return (
           <Dry
             key={drySurface}
-            className={`bottom-Grass absolute h-full top-0 z-3`}
+            className={`dry absolute h-full top-0 z-3`}
             surfaceColor={drySurface}
+          />
+        );
+      })}
+      {ashSurfaces.map((ashSurface) => {
+        return (
+          <Ash
+            key={ashSurface}
+            className={`ash absolute h-full top-0 z-3`}
+            surfaceColor={ashSurface}
           />
         );
       })}

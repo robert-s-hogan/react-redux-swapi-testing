@@ -1,7 +1,6 @@
 const Rock = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p>Rock: {surfaceColor}</p>
       <svg
         viewBox="0 0 100 100"
         className={`rock z-20 ${surfaceColor} ${styles}`}

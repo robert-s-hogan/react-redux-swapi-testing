@@ -171,7 +171,9 @@ const PlanetAtmosphere = ({
   return (
     <div
       className={`planet-background-top-third absolute h-93 overflow-y-hidden w-full ${
-        name === 'Bespin' ? 'bg-unknown' : 'bg-skyBlue'
+        name === 'Bespin' || name === 'Polis Massa' || name === 'Dorin'
+          ? 'bg-unknown'
+          : 'bg-skyBlue'
       } bg-${findPrimaryClimate(
         primaryClimate,
       )} text-black z-1 overflow-hidden`}

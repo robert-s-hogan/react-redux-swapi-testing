@@ -1,10 +1,10 @@
 const Jungle = ({ surfaceColor, jungle }) => {
   return (
     <>
-      <p>Jungle: {surfaceColor}</p>
+      {/* <p>Jungle: {surfaceColor}</p> */}
       <svg
         version="1.0"
-        className={`palm-tree absolute -top-24 w-full lg:-top-12 z-30 ${
+        className={`palm-tree absolute -top-24 w-full lg:-top-12 -z-1 ${
           surfaceColor ? 'bg-palm-tree' : ''
         }`}
         xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ const Jungle = ({ surfaceColor, jungle }) => {
         >
           <path
             d="M1 4233 c1 -773 4 -1088 11 -1066 l11 33 20 -42 c18 -35 22 -38 32
--24 7 8 16 12 20 8 4 -4 5 3 2 16 -3 12 -2 20 3 17 14 -9 40 29 30 45 -14 22
+-24 7 8 16 12 20 8 4 -4 5 -3 1 16 -3 12 -2 20 3 17 14 -9 40 29 30 45 -14 22
 -12 30 5 24 20 -8 19 1 -2 34 -17 26 -17 26 0 13 14 -11 25 -2 15 12 -2 2 2
 10 9 18 8 10 9 20 3 29 -13 20 -12 33 0 25 6 -3 10 -1 10 5 0 6 5 8 11 4 16
 -10 -6 29 -26 46 -9 7 -21 22 -26 32 -9 17 -8 17 23 -2 47 -28 56 -5 15 40
