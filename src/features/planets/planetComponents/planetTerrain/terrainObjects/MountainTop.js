@@ -2,9 +2,7 @@ const TopMountain = ({ surfaceColor, styles }) => {
   return (
     <>
       <svg
-        className={`fill-mountain-top-${
-          surfaceColor ? surfaceColor : 'grass'
-        } ${styles}`}
+        className={`mountain-top ${styles} fill-mountain-top-${surfaceColor} -z-10`}
         viewBox="0 0 2087 1350.21"
         xmlns="http://www.w3.org/2000/svg"
       >

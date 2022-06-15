@@ -1,11 +1,11 @@
-const Forest = ({ surfaceColor }) => {
+const Forest = ({ surfaceColor, styles }) => {
   return (
     <>
       <p className="text-white">
-        <span className="bg-black">{surfaceColor}</span>
+        <span className="bg-black">Forest > {surfaceColor}</span>
       </p>
       <svg
-        className={`forest z-3 h-full bg-tree absolute bottom-10 -right-8 ${surfaceColor}`}
+        className={`forest  ${surfaceColor} ${styles}`}
         viewBox="0 0 200 40"
         preserveAspectRatio="xMidYMax slice"
       >

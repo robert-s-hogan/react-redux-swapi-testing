@@ -3,14 +3,7 @@ import { useState, useEffect } from 'react';
 import PlanetAtmosphere from './planetComponents/planetAtmosphere/PlanetAtmosphere';
 import PlanetTerrain from './planetComponents/planetTerrain/PlanetTerrain';
 
-const Planet = ({
-  name,
-  terrain,
-  climate,
-  rotation,
-  diameter,
-  surface_water,
-}) => {
+const Planet = ({ name, terrain, climate, rotation, diameter, surface_water }) => {
   const [terrainSplit, setTerrainSplit] = useState([]);
   const [climateSplit, setClimateSplit] = useState([]);
   const [primarySurface, setPrimarySurface] = useState('');
@@ -19,7 +12,6 @@ const Planet = ({
     const terrainSplit = terrain.split(', ');
     const surfaceArray = terrainSplit.filter((word, index, arr) => {
       if (word === 'desert' || word === 'barren') {
-        console.log(`dry: ${word}`);
         return 'dry';
       } else if (
         word === 'ocean' ||
@@ -28,20 +20,12 @@ const Planet = ({
         word === 'oceans' ||
         word === 'toxic seacloud'
       ) {
-        console.log(`water: ${word}`);
         return 'water';
       } else if (word === 'tundra' || word === 'ice') {
-        console.log(`ice: ${word}`);
         return 'ice';
-      } else if (
-        word === 'grass' ||
-        word === 'grasslands' ||
-        word === 'grassy hills'
-      ) {
-        console.log(`grass: ${word}`);
+      } else if (word === 'grass' || word === 'grasslands' || word === 'grassy hills') {
         return 'grass';
       } else if (word === 'ash' || word === 'asteroid') {
-        console.log(`ash: ${word}`);
         return 'ash';
       }
     });

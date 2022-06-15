@@ -2,21 +2,16 @@ const Swamp = ({ surfaceColor }) => {
   return (
     <>
       <p className="text-white">Swamp: {surfaceColor}</p>
-      <div className="bg-murky h-28 lg:h-24 xl:h-36 w-full absolute bottom-0 z-20"></div>
+      <div className="bg-murky h-28 xl:h-42 w-full absolute bottom-0 z-4"></div>
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        className={`z-30 top-16 lg:top-0 2xl:top-24 absolute bg-swamp`}
+        className={`z-4 top-14 lg:-top-6 2xl:top-24 absolute fill-forest `}
         viewBox="0 0 900.000000 1350.000000"
         preserveAspectRatio="xMidYMid meet"
       >
-        <metadata>
-          Created by potrace 1.10, written by Peter Selinger 2001-2011
-        </metadata>
-        <g
-          transform="translate(0.000000,1350.000000) scale(0.100000,-0.100000)"
-          stroke="none"
-        >
+        <metadata>Created by potrace 1.10, written by Peter Selinger 2001-2011</metadata>
+        <g transform="translate(0.000000,1350.000000) scale(0.100000,-0.100000)" stroke="none">
           <path
             d="M135 10112 c-13 -13 -104 -32 -122 -25 -11 4 -13 -810 -13 -5041 l0
 -5046 4500 0 4500 0 0 1398 0 1398 -23 -1 c-12 0 -35 -10 -51 -23 -40 -31 -60

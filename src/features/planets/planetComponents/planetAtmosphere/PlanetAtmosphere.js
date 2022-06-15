@@ -5,12 +5,7 @@ import PlanetAtmosphereSunPosition from './PlanetAtmosphereSunPosition';
 import PlanetAtmosphereSun from './PlanetAtmosphereSun';
 import '../../../../style/planetBackground.css';
 
-const PlanetAtmosphere = ({
-  primaryClimate,
-  secondaryClimate,
-  tertiaryClimate,
-  name,
-}) => {
+const PlanetAtmosphere = ({ primaryClimate, secondaryClimate, tertiaryClimate, name }) => {
   const [sunSize, setSunSize] = useState(0);
   const [sunPosition, setSunPosition] = useState(0);
 
@@ -170,46 +165,35 @@ const PlanetAtmosphere = ({
 
   return (
     <div
-      className={`planet-background-top-third absolute h-93 overflow-y-hidden w-full ${
-        name === 'Bespin' || name === 'Polis Massa' || name === 'Dorin'
-          ? 'bg-unknown'
-          : 'bg-skyBlue'
-      } bg-${findPrimaryClimate(
-        primaryClimate,
-      )} text-black z-1 overflow-hidden`}
+      className={`planet-background absolute h-93 overflow-y-hidden w-full bg-skyBlue
+      text-black -z-50 overflow-hidden`}
     >
       {primaryClimate && (
         <div
-          className={`absolute z-3 top-0 h-90 w-full text-white ${findPrimaryClimate(
+          className={`absolute top-0 h-90 w-full text-white ${findPrimaryClimate(
             primaryClimate,
           )}`}
         >
           {findPrimaryClimate(primaryClimate)}
         </div>
       )}
-      <h3 className="right-0 m-0 uppercase text-xl p-2 font-light text-white z-3 absolute">
+      <h3 className="right-0 m-0 uppercase text-xl p-2 font-light text-white absolute">
         {name}
       </h3>
       {primaryClimate !== 'unknown' && name !== 'Bespin' && (
         <PlanetAtmosphereSunPosition
           className={`absolute left-${sunPosition} top-${sunPosition} border-20 border-white overflow-hidden h-${
             sunSize + 20
-          } w-${
-            sunSize + 20
-          } mx-auto rounded-full opacity-90 shadow-sun-container`}
+          } w-${sunSize + 20} mx-auto rounded-full opacity-90 shadow-sun-container`}
         >
           <PlanetAtmosphereSun height={sunSize} width={sunSize} />
         </PlanetAtmosphereSunPosition>
       )}
       {secondaryClimate && (
-        <div className="z-4 absolute top-6">
-          {findSecondaryClimate(secondaryClimate)}
-        </div>
+        <div className="absolute top-6">{findSecondaryClimate(secondaryClimate)}</div>
       )}
       {tertiaryClimate && (
-        <div className="z-5 absolute top-12">
-          {findTertiaryClimate(tertiaryClimate)}
-        </div>
+        <div className="absolute top-12">{findTertiaryClimate(tertiaryClimate)}</div>
       )}
     </div>
   );

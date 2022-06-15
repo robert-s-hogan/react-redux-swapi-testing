@@ -1,4 +1,4 @@
-// import Cave from '../terrainObjects/Cave';
+import Cave from '../terrainObjects/Cave';
 import Foreground from '../terrainObjects/Foreground';
 import MountainTop from '../terrainObjects/Mountain';
 const Ice = ({ surfaceColor, cave }) => {
@@ -9,14 +9,29 @@ const Ice = ({ surfaceColor, cave }) => {
           <span className="bg-black">Ice > {surfaceColor}</span>
         </p>
         <MountainTop
-          styles={`fill-${surfaceColor} h-full absolute -bottom-6 -left-2 z-3`}
+          styles={`fill-mountain-top-${surfaceColor} h-full absolute -bottom-6 -left-2 -z-10`}
           surfaceColor={surfaceColor}
         />
         <Foreground
-          styles={`fill-${surfaceColor} h-full absolute -bottom-6 -left-2 z-3`}
-          surfaceColor={surfaceColor}
+          styles={`fill-foreground-${surfaceColor} h-full absolute -bottom-6 -left-2 z-1`}
         />
         {/* <Cave surfaceColor={surfaceColor} styles={`rotate-45`} /> */}
+      </>
+    );
+  } else if (surfaceColor === 'ice caves') {
+    return (
+      <>
+        <p className="text-white">
+          <span className="bg-black">Ice Caves > {surfaceColor}</span>
+        </p>
+        <Cave
+          styles={`fill-cave-${surfaceColor} h-1/4 bg-cave absolute -z-3 bottom-10 right-32 rotate-45`}
+          surfaceColor={surfaceColor}
+        />
+        <Cave
+          styles={`fill-cave-${surfaceColor} h-1/3 bg-cave absolute -z-7 bottom-16 right-48 -rotate-200`}
+          surfaceColor={surfaceColor}
+        />
       </>
     );
   } else {

@@ -1,21 +1,18 @@
 const Volcano = ({ styles, surfaceColor }) => {
   return (
     <>
-      <p>{surfaceColor}</p>
+      <p className="text-white">
+        <span className="bg-black">Volcano > {surfaceColor}</span>
+      </p>
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1280.000000 778.000000"
-        className={`volcano fill-${surfaceColor} `}
+        className={`volcano ${styles} `}
         preserveAspectRatio="xMidYMid meet"
       >
-        <metadata>
-          Created by potrace 1.15, written by Peter Selinger 2001-2017
-        </metadata>
-        <g
-          transform="translate(0.000000,778.000000) scale(0.100000,-0.100000)"
-          stroke="none"
-        >
+        <metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017</metadata>
+        <g transform="translate(0.000000,778.000000) scale(0.100000,-0.100000)" stroke="none">
           <path
             d="M8495 7756 c-17 -14 -33 -20 -36 -14 -3 5 -133 -85 -288 -201 -155
 -116 -286 -211 -291 -211 -5 0 -91 22 -192 49 -101 27 -365 97 -587 156 l-404

@@ -1,19 +1,14 @@
-const Cityscape = ({ surfaceColor, cityscape }) => {
+const Cityscape = ({ surfaceColor, styles }) => {
   return (
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
-        className={`cityscape z-2 absolute bottom-10 left-14 w-full h-full fill-${surfaceColor}-front`}
+        className={`cityscape -z-1 w-full h-full fill-${surfaceColor}-front ${styles}`}
         preserveAspectRatio="xMidYMid meet"
       >
-        <metadata>
-          Created by potrace 1.15, written by Peter Selinger 2001-2017
-        </metadata>
-        <g
-          transform="translate(0.000000,768.000000) scale(0.100000,-0.100000)"
-          stroke="none"
-        >
+        <metadata>Created by potrace 1.15, written by Peter Selinger 2001-2017</metadata>
+        <g transform="translate(0.000000,768.000000) scale(0.100000,-0.100000)" stroke="none">
           <path
             d="M5489 7190 c-113 -21 -216 -43 -227 -49 -27 -14 -28 -46 -6 -161 8
 -45 14 -83 12 -85 -2 -1 -70 -14 -152 -29 -82 -15 -157 -31 -167 -37 -18 -9
