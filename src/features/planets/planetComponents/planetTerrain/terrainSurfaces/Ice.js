@@ -5,9 +5,9 @@ const Ice = ({ surfaceColor, cave }) => {
   if (surfaceColor === 'ice' || surfaceColor === 'tundra') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Ice > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainTop
           styles={`fill-mountain-top-${surfaceColor} h-full absolute -bottom-6 -left-2 -z-10`}
           surfaceColor={surfaceColor}
@@ -21,9 +21,9 @@ const Ice = ({ surfaceColor, cave }) => {
   } else if (surfaceColor === 'ice caves') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Ice Caves > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Cave
           styles={`fill-cave-${surfaceColor} h-1/4 bg-cave absolute -z-3 bottom-10 right-32 rotate-45`}
           surfaceColor={surfaceColor}
@@ -37,9 +37,9 @@ const Ice = ({ surfaceColor, cave }) => {
   } else {
     return (
       <>
-        <code className="text-xs">
+        {/* <code className="text-xs">
           <pre>{JSON.stringify(surfaceColor, null, 2)}</pre>
-        </code>
+        </code> */}
       </>
     );
   }

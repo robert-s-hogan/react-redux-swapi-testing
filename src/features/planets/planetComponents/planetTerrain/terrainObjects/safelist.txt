@@ -1,0 +1,181 @@
+airless |
+  ash |
+  barren |
+  desert |
+  deserts |
+  fungus |
+  grass |
+  grasslands |
+  mountains |
+  rocky |
+  savanna |
+  savannas |
+  scrublands |
+  swamps |
+  tundra |
+  verdant |
+  volcanoes |
+  volcano |
+  (bush - cityscape - 1) |
+  (bush - cityscape - 2) |
+  (bush - cityscape - 3) |
+  (bush - cityscape - 4) |
+  (bush - cityscape - 5) |
+  (bush - forests - 1) |
+  (bush - forests - 2) |
+  (bush - forests - 3) |
+  (bush - forests - 4) |
+  (bush - forests - 5) |
+  (bush - fungus - 1) |
+  (bush - fungus - 2) |
+  (bush - fungus - 3) |
+  (bush - fungus - 4) |
+  (bush - fungus - 5) |
+  (bush - grass - 1) |
+  (bush - grass - 2) |
+  (bush - grass - 3) |
+  (bush - grass - 4) |
+  (bush - grass - 5) |
+  (bush - grasslands - 1) |
+  (bush - grasslands - 2) |
+  (bush - grasslands - 3) |
+  (bush - grasslands - 4) |
+  (bush - grasslands - 5) |
+  (bush - jungles - 1) |
+  (bush - jungles - 2) |
+  (bush - jungles - 3) |
+  (bush - jungles - 4) |
+  (bush - jungles - 5) |
+  (bush - rainforests - 1) |
+  (bush - rainforests - 2) |
+  (bush - rainforests - 3) |
+  (bush - rainforests - 4) |
+  (bush - rainforests - 5) |
+  (bush - savanna - 1) |
+  (bush - savanna - 2) |
+  (bush - savanna - 3) |
+  (bush - savanna - 4) |
+  (bush - savanna - 5) |
+  (bush - scrublands - 1) |
+  (bush - scrublands - 2) |
+  (bush - scrublands - 3) |
+  (bush - scrublands - 4) |
+  (bush - scrublands - 5) |
+  (bush - verdant - 1) |
+  (bush - verdant - 2) |
+  (bush - verdant - 3) |
+  (bush - verdant - 4) |
+  (bush - verdant - 5) |
+  (bush - swamp - 2) |
+  (bush - swamp - 4) |
+  (bush - swamp - 5) |
+  (bush - swamps - 2) |
+  (bush - swamps - 4) |
+  (bush - swamps - 5) |
+  (rock - barren - 1) |
+  (rock - barren - 2) |
+  (rock - barren - 3) |
+  (rock - barren - 4) |
+  (rock - barren - 5) |
+  (rock - desert - 1) |
+  (rock - desert - 2) |
+  (rock - desert - 3) |
+  (rock - desert - 4) |
+  (rock - desert - 5) |
+  (rock - deserts - 1) |
+  (rock - deserts - 2) |
+  (rock - deserts - 3) |
+  (rock - deserts - 4) |
+  (rock - deserts - 5) |
+  (rock - rocky - 1) |
+  (rock - rocky - 2) |
+  (rock - rocky - 3) |
+  (rock - rocky - 4) |
+  (rock - rocky - 5) |
+  (rock - tundra - 1) |
+  (rock - tundra - 2) |
+  (rock - tundra - 3) |
+  (rock - tundra - 4) |
+  (rock - tundra - 5) |
+  (rock - volcanoes - 1) |
+  (rock - volcanoes - 2) |
+  (rock - volcanoes - 3) |
+  (rock - volcanoes - 4) |
+  (rock - volcanoes - 5) |
+  (rock - volcano - 1) |
+  (rock - volcano - 2) |
+  (rock - volcano - 3) |
+  (rock - volcano - 4) |
+  (rock - volcano - 5) |
+  (foreground - airless) |
+  (foreground - ash) |
+  (foreground - barren) |
+  (foreground - cityscape) |
+  (foreground - desert) |
+  (foreground - deserts) |
+  (foreground - forests) |
+  (foreground - fungus) |
+  (foreground - grass) |
+  (foreground - grasslands) |
+  (foreground - ice) |
+  (foreground - jungles) |
+  (foreground - rainforests) |
+  (foreground - rocky) |
+  (foreground - savanna) |
+  (foreground - savannas) |
+  (foreground - scrublands) |
+  (foreground - tundra) |
+  (foreground - verdant) |
+  (foreground - volcano) |
+  (foreground - volcanoes) |
+  (foreground - swamp) |
+  (foreground - swamps) |
+  (mountain - top - cityscape) |
+  (mountain - middle - cityscape) |
+  (mountain - bottom - cityscape) |
+  (mountain - top - forests) |
+  (mountain - middle - forests) |
+  (mountain - bottom - forests) |
+  (mountain - top - fungus) |
+  (mountain - middle - fungus) |
+  (mountain - bottom - fungus) |
+  (mountain - top - grass) |
+  (mountain - middle - grass) |
+  (mountain - bottom - grass) |
+  (mountain - top - grasslands) |
+  (mountain - middle - grasslands) |
+  (mountain - bottom - grasslands) |
+  (mountain - top - ice) |
+  (mountain - middle - ice) |
+  (mountain - bottom - ice) |
+  (mountain - top - jungles) |
+  (mountain - middle - jungles) |
+  (mountain - bottom - jungles) |
+  (mountain - top - rainforests) |
+  (mountain - middle - rainforests) |
+  (mountain - bottom - rainforests) |
+  (mountain - top - scrublands) |
+  (mountain - middle - scrublands) |
+  (mountain - bottom - scrublands) |
+  (mountain - top - swamp) |
+  (mountain - middle - swamp) |
+  (mountain - bottom - swamp) |
+  (mountain - top - swamps) |
+  (mountain - middle - swamps) |
+  (mountain - bottom - swamps) |
+  (mountain - top - tundra) |
+  (mountain - middle - tundra) |
+  (mountain - bottom - tundra) |
+  (mountain - top - verdant) |
+  (mountain - middle - verdant) |
+  (mountain - bottom - verdant) |
+  (mountain - bottom - ash) |
+  (mountain - bottom - barren) |
+  (mountain - bottom - desert) |
+  (mountain - bottom - deserts) |
+  (mountain - bottom - rocky) |
+  (mountain - bottom - savanna) |
+  (mountain - bottom - savannas) |
+  (mountain - bottom - tundra) |
+  (mountain - bottom - volcano) |
+  (mountain - bottom - volcanoes);

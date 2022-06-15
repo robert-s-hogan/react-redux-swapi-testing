@@ -52,7 +52,7 @@ const Planet = ({ name, terrain, climate, rotation, diameter, surface_water }) =
         tertiaryClimate={climateSplit[2]}
         name={name}
       />
-      <PlanetTerrain terrain={terrainSplit} />
+      <PlanetTerrain terrain={terrainSplit} name={name} />
     </div>
   );
 };

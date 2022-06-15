@@ -1,7 +1,7 @@
 const Sinkhole = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p className="text-white z-20">Sinkhole: {surfaceColor}</p>
+      {/* <p className="text-white z-20">Sinkhole: {surfaceColor}</p> */}
       <svg
         id="sw-js-blob-svg"
         viewBox="0 0 100 100"

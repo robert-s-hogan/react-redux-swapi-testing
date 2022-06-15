@@ -6,9 +6,9 @@ const Dry = ({ surfaceColor, rock }) => {
   if (surfaceColor === 'desert' || surfaceColor === 'barren' || surfaceColor === 'deserts') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Dry > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainBottom
           styles={`h-full absolute -bottom-16 -left-2 -z-4 ${surfaceColor}`}
           surfaceColor={surfaceColor}
@@ -35,9 +35,9 @@ const Dry = ({ surfaceColor, rock }) => {
   } else if (surfaceColor === 'rocky' || surfaceColor === 'rock') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Dry > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainBottom
           styles={`h-full absolute -bottom-16 -left-2 -z-4 ${surfaceColor}`}
           surfaceColor={surfaceColor}
@@ -64,9 +64,9 @@ const Dry = ({ surfaceColor, rock }) => {
   } else if (surfaceColor === 'rocky canyons') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Dry > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainBottom
           styles={`h-full absolute -bottom-16 -left-2 -z-4 ${surfaceColor}`}
           surfaceColor={surfaceColor}
@@ -93,9 +93,9 @@ const Dry = ({ surfaceColor, rock }) => {
   } else {
     return (
       <>
-        <code className="text-xs">
+        {/* <code className="text-xs">
           <pre>{JSON.stringify(surfaceColor, null, 2)}</pre>
-        </code>
+        </code> */}
       </>
     );
   }

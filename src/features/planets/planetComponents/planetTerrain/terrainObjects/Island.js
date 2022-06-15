@@ -1,7 +1,7 @@
 const Island = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p>Island</p>
+      {/* <p>Island</p> */}
       <svg
         version="1.1"
         viewBox="0 0 2400 1500"

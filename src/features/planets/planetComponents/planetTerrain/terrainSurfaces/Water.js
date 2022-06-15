@@ -13,9 +13,9 @@ const Water = ({ surfaceColor }) => {
   ) {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Water > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Ocean
           surfaceColor={surfaceColor}
           styles={`h-full absolute bottom-0 -left-12 -z-6 opacity-60`}
@@ -25,9 +25,9 @@ const Water = ({ surfaceColor }) => {
   } else if (surfaceColor === 'rocky islands') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Water > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Ocean
           surfaceColor={surfaceColor}
           styles={`h-full absolute bottom-0 -left-12 -z-6 opacity-60`}
@@ -40,9 +40,9 @@ const Water = ({ surfaceColor }) => {
   } else if (surfaceColor === 'glaciers') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Water > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Ocean
           surfaceColor={surfaceColor}
           styles={`h-full absolute bottom-0 -z-6 opacity-60`}
@@ -60,9 +60,9 @@ const Water = ({ surfaceColor }) => {
   } else if (surfaceColor === 'ice canyons') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Water > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Canyon
           surfaceColor={surfaceColor}
           styles={`h-full absolute -bottom-4 -left-12 -z-6`}
@@ -76,9 +76,9 @@ const Water = ({ surfaceColor }) => {
   } else if (surfaceColor === 'swamp' || surfaceColor === 'swamps') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Water > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Ocean surfaceColor={surfaceColor} styles={`h-full absolute bottom-0 z-3 opacity-80`} />
         <Swamp surfaceColor={surfaceColor} styles={`h-full absolute -left-12 z-4`} />
       </>
@@ -86,9 +86,9 @@ const Water = ({ surfaceColor }) => {
   } else if (surfaceColor === 'toxic cloudsea') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Water > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Ocean
           surfaceColor={surfaceColor}
           styles={`h-full absolute bottom-0 -z-2 fill-green opacity-80`}
@@ -98,9 +98,9 @@ const Water = ({ surfaceColor }) => {
   } else {
     return (
       <>
-        <code className="text-xs">
+        {/* <code className="text-xs">
           <pre>{JSON.stringify(surfaceColor, null, 2)}</pre>
-        </code>
+        </code> */}
       </>
     );
   }

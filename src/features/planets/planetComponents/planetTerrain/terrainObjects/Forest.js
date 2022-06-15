@@ -1,9 +1,9 @@
 const Forest = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p className="text-white">
+      {/* <p className="text-white">
         <span className="bg-black">Forest > {surfaceColor}</span>
-      </p>
+      </p> */}
       <svg
         className={`forest  ${surfaceColor} ${styles}`}
         viewBox="0 0 200 40"

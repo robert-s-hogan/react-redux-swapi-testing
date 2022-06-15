@@ -168,7 +168,7 @@ const PlanetAtmosphere = ({ primaryClimate, secondaryClimate, tertiaryClimate, n
       className={`planet-background absolute h-93 overflow-y-hidden w-full bg-skyBlue
       text-black -z-50 overflow-hidden`}
     >
-      {primaryClimate && (
+      {/* {primaryClimate && (
         <div
           className={`absolute top-0 h-90 w-full text-white ${findPrimaryClimate(
             primaryClimate,
@@ -176,11 +176,11 @@ const PlanetAtmosphere = ({ primaryClimate, secondaryClimate, tertiaryClimate, n
         >
           {findPrimaryClimate(primaryClimate)}
         </div>
-      )}
+      )} */}
       <h3 className="right-0 m-0 uppercase text-xl p-2 font-light text-white absolute">
         {name}
       </h3>
-      {primaryClimate !== 'unknown' && name !== 'Bespin' && (
+      {primaryClimate !== 'unknown' && (
         <PlanetAtmosphereSunPosition
           className={`absolute left-${sunPosition} top-${sunPosition} border-20 border-white overflow-hidden h-${
             sunSize + 20
@@ -189,12 +189,12 @@ const PlanetAtmosphere = ({ primaryClimate, secondaryClimate, tertiaryClimate, n
           <PlanetAtmosphereSun height={sunSize} width={sunSize} />
         </PlanetAtmosphereSunPosition>
       )}
-      {secondaryClimate && (
+      {/* {secondaryClimate && (
         <div className="absolute top-6">{findSecondaryClimate(secondaryClimate)}</div>
       )}
       {tertiaryClimate && (
         <div className="absolute top-12">{findTertiaryClimate(tertiaryClimate)}</div>
-      )}
+      )} */}
     </div>
   );
 };

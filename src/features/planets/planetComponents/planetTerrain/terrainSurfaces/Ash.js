@@ -60,9 +60,9 @@ const Ash = ({ surfaceColor }) => {
   } else {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Ash > {surfaceColor}</span>
-        </p>
+        </p> */}
 
         <Mountain surfaceColor={surfaceColor} />
         <Foreground

@@ -6,7 +6,7 @@ import Space from './terrainSurfaces/Space';
 import Water from './terrainSurfaces/Water';
 import './PlanetTerrain.css';
 
-const PlanetTerrain = ({ terrain }) => {
+const PlanetTerrain = ({ terrain, name }) => {
   const ashSurfaces = terrain.filter((terrainSurface) => {
     const pickedTerrain =
       terrainSurface.includes('ash') ||
@@ -128,6 +128,7 @@ const PlanetTerrain = ({ terrain }) => {
             key={spaceSurfaces}
             className={`space absolute h-full bottom-0`}
             surfaceColor={spaceSurfaces}
+            name={name}
           />
         );
       })}

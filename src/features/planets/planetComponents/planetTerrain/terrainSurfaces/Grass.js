@@ -24,9 +24,9 @@ const Grass = ({ surfaceColor, styles }) => {
   ) {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainBottom
           styles={`h-full absolute -bottom-16 -left-2 -z-4`}
           surfaceColor={surfaceColor}
@@ -37,9 +37,9 @@ const Grass = ({ surfaceColor, styles }) => {
   } else if (surfaceColor === 'swamp' || surfaceColor === 'swamps') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainBottom
           styles={`h-full absolute -bottom-16 -left-2 -z-4`}
           surfaceColor={surfaceColor}
@@ -63,9 +63,9 @@ const Grass = ({ surfaceColor, styles }) => {
   ) {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Mountain surfaceColor={surfaceColor} />
         <Forest
           surfaceColor={surfaceColor}
@@ -85,9 +85,9 @@ const Grass = ({ surfaceColor, styles }) => {
   } else if (surfaceColor === 'fungus forests') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Forest
           surfaceColor={surfaceColor}
           styles={`-z-2 h-full bg-tree absolute bottom-0 -right-8`}
@@ -136,9 +136,9 @@ const Grass = ({ surfaceColor, styles }) => {
   } else if (surfaceColor === 'scrublands') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <BushThree surfaceColor={surfaceColor} />
         <BushFour surfaceColor={surfaceColor} />
         <Mountain surfaceColor={surfaceColor} />
@@ -147,9 +147,9 @@ const Grass = ({ surfaceColor, styles }) => {
   } else if (surfaceColor === 'jungle' || surfaceColor === 'jungles') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Tree surfaceColor={surfaceColor} styles={`absolute top-12 -left-12 z-6`} />
         <BushOne surfaceColor={surfaceColor} />
         <BushTwo surfaceColor={surfaceColor} />
@@ -180,9 +180,9 @@ const Grass = ({ surfaceColor, styles }) => {
   ) {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <MountainBottom
           styles={`h-full absolute -bottom-16 -left-2 -z-4`}
           surfaceColor={surfaceColor}
@@ -205,9 +205,9 @@ const Grass = ({ surfaceColor, styles }) => {
   } else if (surfaceColor === 'cityscape' || surfaceColor === 'urban') {
     return (
       <>
-        <p className="text-white">
+        {/* <p className="text-white">
           <span className="bg-black">Grass > {surfaceColor}</span>
-        </p>
+        </p> */}
         <Mountain surfaceColor={surfaceColor} />
         <Cityscape
           surfaceColor={surfaceColor}
@@ -226,12 +226,12 @@ const Grass = ({ surfaceColor, styles }) => {
   } else {
     return (
       <>
-        <p className="text-white z-10 mt-10">
+        {/* <p className="text-white z-10 mt-10">
           <span className="bg-black">Grass</span>
         </p>
         <code className="text-xs">
           <pre>{JSON.stringify(surfaceColor, null, 2)}</pre>
-        </code>
+        </code> */}
       </>
     );
   }

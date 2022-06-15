@@ -1,9 +1,9 @@
 const Tree = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p className="text-white">
+      {/* <p className="text-white">
         <span className="bg-black">Tree > {surfaceColor}</span>
-      </p>
+      </p> */}
       <svg
         className={`jungle-tree fill-jungle-tree h-full ${styles}`}
         xmlns="http://www.w3.org/2000/svg"

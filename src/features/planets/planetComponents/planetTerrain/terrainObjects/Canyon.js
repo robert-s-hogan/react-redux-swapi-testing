@@ -1,7 +1,7 @@
 const Canyon = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p>Canyon: {surfaceColor}</p>
+      {/* <p>Canyon: {surfaceColor}</p> */}
       <svg
         viewBox="0 0 1312 762"
         xmlns="http://www.w3.org/2000/svg"

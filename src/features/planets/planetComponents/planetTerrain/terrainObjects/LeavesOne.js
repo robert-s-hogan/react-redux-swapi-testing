@@ -1,9 +1,9 @@
 const LeavesOne = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p className="text-white">
+      {/* <p className="text-white">
         <span className="bg-black">LeavesOne > {surfaceColor}</span>
-      </p>
+      </p> */}
       <svg
         className={`leaves-one ${styles}`}
         viewBox="0 0 2087 1350.21"
