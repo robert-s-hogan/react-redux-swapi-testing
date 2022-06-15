@@ -3,7 +3,7 @@ const Rock = ({ surfaceColor, styles }) => {
     <>
       <svg
         viewBox="0 0 100 100"
-        className={`rock z-20 ${surfaceColor} ${styles}`}
+        className={`rock z-9 ${surfaceColor} ${styles}`}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

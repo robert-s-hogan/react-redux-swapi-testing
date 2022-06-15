@@ -6,7 +6,7 @@ const Lake = ({ surfaceColor }) => {
         id="sw-js-blob-svg"
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
-        className={`lake absolute top-48 lg:top-36 2xl:top-64 -right-16 w-full z-20 ${
+        className={`lake absolute top-48 lg:top-36 2xl:top-64 -right-16 w-full z-1 ${
           surfaceColor ? 'bg-lake' : ''
         }`}
       >

@@ -12,7 +12,8 @@ const PlanetTerrain = ({ terrain }) => {
       terrainSurface.includes('ash') ||
       terrainSurface.includes('volcanoes') ||
       terrainSurface.includes('volcano') ||
-      terrainSurface.includes('airless asteroid');
+      terrainSurface.includes('airless asteroid') ||
+      terrainSurface.includes('rocky deserts');
     return pickedTerrain;
   });
   const drySurfaces = terrain.filter((terrainSurface) => {
@@ -20,7 +21,8 @@ const PlanetTerrain = ({ terrain }) => {
       terrainSurface.includes('desert') ||
       terrainSurface.includes('deserts') ||
       terrainSurface.includes('barren') ||
-      terrainSurface.includes('rocky');
+      terrainSurface.includes('rocky') ||
+      terrainSurface.includes('rocky canyons');
     return pickedTerrain;
   });
   const grassSurfaces = terrain.filter((terrainSurface) => {
@@ -35,19 +37,15 @@ const PlanetTerrain = ({ terrain }) => {
       terrainSurface.includes('jungles') ||
       terrainSurface.includes('forest') ||
       terrainSurface.includes('forests') ||
-      terrainSurface.includes('swamp') ||
-      terrainSurface.includes('swamps') ||
       terrainSurface.includes('cityscape') ||
       terrainSurface.includes('urban');
-
     return pickedTerrain;
   });
   const iceSurfaces = terrain.filter((terrainSurface) => {
     const pickedTerrain =
       terrainSurface.includes('ice') ||
       terrainSurface.includes('tundra') ||
-      terrainSurface.includes('tundras') ||
-      terrainSurface.includes('glaciers');
+      terrainSurface.includes('tundras');
     return pickedTerrain;
   });
   const spaceSurfaces = terrain.filter((terrainSurface) => {
@@ -61,24 +59,29 @@ const PlanetTerrain = ({ terrain }) => {
   });
   const waterSurfaces = terrain.filter((terrainSurface) => {
     const pickedTerrain =
+      terrainSurface.includes('glaciers') ||
       terrainSurface.includes('water') ||
       terrainSurface.includes('ocean') ||
       terrainSurface.includes('sea') ||
       terrainSurface.includes('seas') ||
       terrainSurface.includes('oceans') ||
+      terrainSurface.includes('ice canyons') ||
+      terrainSurface.includes('rocky islands') ||
+      terrainSurface.includes('swamp') ||
+      terrainSurface.includes('swamps') ||
       terrainSurface.includes('toxic seacloud');
     return pickedTerrain;
   });
 
   return (
     <div
-      className={`planet-terrain relative h-93 w-full top-0 text-black z-1 overflow-y-hidden`}
+      className={`planet-terrain relative h-93 w-full top-0 text-black -z-40 overflow-y-hidden`}
     >
       {drySurfaces.map((drySurface) => {
         return (
           <Dry
             key={drySurface}
-            className={`dry absolute h-full top-0 z-3`}
+            className={`dry absolute h-full top-0`}
             surfaceColor={drySurface}
           />
         );
@@ -87,7 +90,7 @@ const PlanetTerrain = ({ terrain }) => {
         return (
           <Ash
             key={ashSurface}
-            className={`ash absolute h-full top-0 z-3`}
+            className={`ash absolute h-full top-0`}
             surfaceColor={ashSurface}
           />
         );
@@ -96,7 +99,7 @@ const PlanetTerrain = ({ terrain }) => {
         return (
           <Grass
             key={grassSurface}
-            className={`grass absolute h-full bottom-0 z-3`}
+            className={`grass absolute h-full bottom-0`}
             surfaceColor={grassSurface}
           />
         );
@@ -105,7 +108,7 @@ const PlanetTerrain = ({ terrain }) => {
         return (
           <Water
             key={waterSurface}
-            className={`water absolute h-full bottom-0 z-3`}
+            className={`water absolute h-full bottom-0`}
             surfaceColor={waterSurface}
           />
         );
@@ -114,7 +117,7 @@ const PlanetTerrain = ({ terrain }) => {
         return (
           <Ice
             key={iceSurface}
-            className={`ice absolute h-full bottom-0 z-4`}
+            className={`ice absolute h-full bottom-0`}
             surfaceColor={iceSurface}
           />
         );
@@ -123,7 +126,7 @@ const PlanetTerrain = ({ terrain }) => {
         return (
           <Space
             key={spaceSurfaces}
-            className={`space absolute h-full bottom-0 z-3`}
+            className={`space absolute h-full bottom-0`}
             surfaceColor={spaceSurfaces}
           />
         );

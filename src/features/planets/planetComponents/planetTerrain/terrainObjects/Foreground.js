@@ -2,9 +2,7 @@ const Foreground = ({ surfaceColor, styles }) => {
   return (
     <>
       <svg
-        className={`foreground fill-foreground-${
-          surfaceColor ? surfaceColor : 'dirt'
-        } ${styles}`}
+        className={`foreground h-full ${styles}`}
         viewBox="0 0 2087 1350.21"
         xmlns="http://www.w3.org/2000/svg"
       >

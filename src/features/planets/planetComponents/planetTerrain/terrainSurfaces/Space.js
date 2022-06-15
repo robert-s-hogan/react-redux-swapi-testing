@@ -10,45 +10,45 @@ const Space = ({ surfaceColor, gas }) => {
     surfaceColor === 'asteroids'
   ) {
     return (
-      <>
+      <div className="bg-unknown absolute h-full w-full -z-50">
         <p className="text-white">
           <span className="bg-black">Space > {surfaceColor}</span>
         </p>
-        <StarOne styles={`z-1`} surfaceColor={surfaceColor} />
-        <StarTwo styles={`z-1`} surfaceColor={surfaceColor} />
-        <StarThree styles={`z-1`} surfaceColor={surfaceColor} />
-      </>
+        <StarOne surfaceColor={surfaceColor} />
+        <StarTwo surfaceColor={surfaceColor} />
+        <StarThree surfaceColor={surfaceColor} />
+      </div>
     );
   } else if (surfaceColor === 'gas giant') {
     return (
-      <>
+      <div className="bg-unknown absolute h-full w-full -z-50">
         <p className="text-white">
           <span className="bg-black">Space > {surfaceColor}</span>
         </p>
-        <div className="planet absolute -top-2 -left-4 w-96 h-96 z-5 shadow-inner rounded-full"></div>
-        <StarOne styles={`z-1`} surfaceColor={surfaceColor} />
-        <StarTwo styles={`z-1`} surfaceColor={surfaceColor} />
-        <StarThree styles={`z-1`} surfaceColor={surfaceColor} />
-      </>
+        <div className="planet absolute -top-2 -left-4 w-96 h-96 z-0 shadow-inner rounded-full"></div>
+        <StarOne surfaceColor={surfaceColor} />
+        <StarTwo surfaceColor={surfaceColor} />
+        <StarThree surfaceColor={surfaceColor} />
+      </div>
     );
   } else if (surfaceColor === 'airless asteroid') {
     return (
-      <>
+      <div className="bg-unknown absolute h-full w-full -z-50">
         <p className="text-white">
           <span className="bg-black">Space > {surfaceColor}</span>
         </p>
-        <StarOne styles={`z-1`} surfaceColor={surfaceColor} />
-        <StarTwo styles={`z-1`} surfaceColor={surfaceColor} />
-        <StarThree styles={`z-1`} surfaceColor={surfaceColor} />
-      </>
+        <StarOne surfaceColor={surfaceColor} />
+        <StarTwo surfaceColor={surfaceColor} />
+        <StarThree surfaceColor={surfaceColor} />
+      </div>
     );
   } else {
     return (
-      <>
+      <div className="bg-unknown absolute h-full w-full -z-50">
         <code className="text-xs">
           <pre>{JSON.stringify(surfaceColor, null, 2)}</pre>
         </code>
-      </>
+      </div>
     );
   }
 };

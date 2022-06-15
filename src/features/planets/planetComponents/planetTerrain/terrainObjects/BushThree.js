@@ -3,7 +3,7 @@ const BushThree = ({ surfaceColor }) => {
     <>
       {/* <p className="text-xs">BushThree</p> */}
       <svg
-        className={`foreground fill-bush-${surfaceColor}-3 z-3 absolute -bottom-6 -left-2 -right-48`}
+        className={`bush-three fill-bush-${surfaceColor}-3 z-8 absolute -bottom-6 -left-2 -right-48`}
         viewBox="0 0 2087 1350.21"
         xmlns="http://www.w3.org/2000/svg"
       >
