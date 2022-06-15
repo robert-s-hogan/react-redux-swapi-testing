@@ -37,15 +37,7 @@ const People = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [
-    page,
-    totalPages,
-    prefetchNext,
-    peopleStatus,
-    prefetchPrev,
-    dispatch,
-    data,
-  ]);
+  }, [page, totalPages, prefetchNext, peopleStatus, prefetchPrev, dispatch, data]);
 
   if (isLoading) {
     return <Loading />;
@@ -56,7 +48,7 @@ const People = () => {
   }
 
   return (
-    <div>
+    <div className="relative">
       {isFetching ? (
         <div>
           <Loading />
@@ -67,8 +59,15 @@ const People = () => {
             <CardContainer key={person.name}>
               <Person
                 key={person.name}
-                homeworld={person.homeworld}
                 name={person.name}
+                mass={person.mass}
+                height={person.height}
+                hair_color={person.hair_color}
+                skin_color={person.skin_color}
+                eye_color={person.eye_color}
+                birth_year={person.birth_year}
+                gender={person.gender}
+                homeworld={person.homeworld}
               />
             </CardContainer>
           ))}
