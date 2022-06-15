@@ -1,7 +1,9 @@
 const Island = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p>Island</p>
+      <p className="text-white">
+        <span className="bg-black">Island > {surfaceColor}</span>
+      </p>
       <svg
         version="1.1"
         viewBox="0 0 2400 1500"

@@ -1,6 +1,9 @@
 const MidMountain = ({ surfaceColor, styles }) => {
   return (
     <>
+      <p className="text-white">
+        <span className="bg-black">MidMountain > {surfaceColor}</span>
+      </p>
       <svg
         className={`mountain-middle fill-mountain-middle-${surfaceColor} ${styles} -z-8`}
         viewBox="0 0 2087 1350.21"

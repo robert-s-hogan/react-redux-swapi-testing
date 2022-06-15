@@ -1,7 +1,9 @@
 const Swamp = ({ surfaceColor }) => {
   return (
     <>
-      <p className="text-white">Swamp: {surfaceColor}</p>
+      <p className="text-white">
+        <span className="bg-black">Swamp > {surfaceColor}</span>
+      </p>
       <div className="bg-murky h-28 xl:h-42 w-full absolute bottom-0 z-4"></div>
       <svg
         version="1.0"

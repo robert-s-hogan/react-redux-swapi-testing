@@ -1,6 +1,9 @@
 const Foreground = ({ surfaceColor, styles }) => {
   return (
     <>
+      <p className="text-white">
+        <span className="bg-black">Foreground > {surfaceColor}</span>
+      </p>
       <svg
         className={`foreground h-full ${styles}`}
         viewBox="0 0 2087 1350.21"

@@ -1,7 +1,9 @@
 const BushOne = ({ surfaceColor }) => {
   return (
     <>
-      {/* <p className="text-xs">BushOne</p> */}
+      {/* <p className="text-white">
+        <span className="bg-black">BushOne > {surfaceColor}</span>
+      </p> */}
       <svg
         className={`bush-one fill-bush-${surfaceColor}-1 z-6 absolute -bottom-6 -right-48`}
         viewBox="0 0 2087 1350.21"

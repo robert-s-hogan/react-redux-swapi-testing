@@ -1,7 +1,9 @@
 const Lake = ({ surfaceColor }) => {
   return (
     <>
-      <p className="text-white">Lake: {surfaceColor}</p>
+      <p className="text-white">
+        <span className="bg-black">Lake > {surfaceColor}</span>
+      </p>
       <svg
         id="sw-js-blob-svg"
         viewBox="0 0 100 100"
@@ -12,16 +14,8 @@ const Lake = ({ surfaceColor }) => {
       >
         <defs>
           <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-            <stop
-              id="stop1"
-              stopColor="rgba(248, 117, 55, 1)"
-              offset="0%"
-            ></stop>{' '}
-            <stop
-              id="stop2"
-              stopColor="rgba(251, 168, 31, 1)"
-              offset="100%"
-            ></stop>{' '}
+            <stop id="stop1" stopColor="rgba(248, 117, 55, 1)" offset="0%"></stop>{' '}
+            <stop id="stop2" stopColor="rgba(251, 168, 31, 1)" offset="100%"></stop>{' '}
           </linearGradient>{' '}
         </defs>{' '}
         <path

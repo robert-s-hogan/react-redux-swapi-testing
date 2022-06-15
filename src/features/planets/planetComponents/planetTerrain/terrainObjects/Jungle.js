@@ -1,12 +1,10 @@
 const Jungle = ({ surfaceColor, jungle }) => {
   return (
     <>
-      <p>Jungle: {surfaceColor}</p>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 2087 1350.21"
-        className="jungle"
-      >
+      <p className="text-white">
+        <span className="bg-black">Jungle > {surfaceColor}</span>
+      </p>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2087 1350.21" className="jungle">
         <path
           id="tree"
           class="cls-4"

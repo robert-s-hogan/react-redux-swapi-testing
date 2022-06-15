@@ -1,7 +1,9 @@
 const Glacier = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p className="text-white">Glacier > {surfaceColor}</p>
+      <p className="text-white">
+        <span className="bg-black">Glacier > {surfaceColor}</span>
+      </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className={`glacier ${styles}`}

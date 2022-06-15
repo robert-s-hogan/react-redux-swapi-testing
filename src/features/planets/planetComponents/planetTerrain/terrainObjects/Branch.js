@@ -1,9 +1,9 @@
 const Branch = ({ surfaceColor, styles }) => {
   return (
     <>
-      <p className="text-white">
+      {/* <p className="text-white">
         <span className="bg-black">Branch > {surfaceColor}</span>
-      </p>
+      </p> */}
       <svg
         className={`branch ${styles}`}
         viewBox="0 0 2087 1350.21"
