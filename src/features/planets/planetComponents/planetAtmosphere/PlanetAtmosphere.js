@@ -14,154 +14,154 @@ const PlanetAtmosphere = ({ primaryClimate, secondaryClimate, tertiaryClimate, n
     setSunPosition(RandomNumberInRange(0, 24));
   }, []);
 
-  let findPrimaryClimate = (primaryClimate) => {
-    try {
-      switch (primaryClimate) {
-        case 'airless asteroid':
-          return primaryClimate;
-        case 'arid':
-        case 'hot':
-          return primaryClimate;
-        case 'arctic':
-        case 'artic':
-        case 'frozen':
-          return primaryClimate;
-        case 'artificial temperate':
-          return primaryClimate;
-        case 'frigid':
-          return primaryClimate;
-        case 'gas':
-          return primaryClimate;
-        case 'humid':
-        case 'moist':
-          return primaryClimate;
-        case 'plateaus':
-          return primaryClimate;
-        case 'polluted':
-          return primaryClimate;
-        case 'murky':
-          return primaryClimate;
-        case 'rainforests':
-          return primaryClimate;
-        case 'rocky':
-          return primaryClimate;
-        case 'superheated':
-          return primaryClimate;
-        case 'subartic':
-          return primaryClimate;
-        case 'toxic cloudsea':
-          return primaryClimate;
-        case 'tropical':
-          return primaryClimate;
-        case 'windy':
-          return primaryClimate;
-        default:
-          return primaryClimate;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  let findSecondaryClimate = (secondaryClimate) => {
-    try {
-      switch (secondaryClimate) {
-        case 'airless asteroid':
-          return secondaryClimate;
-        case 'arid':
-          return secondaryClimate;
-        case 'arctic':
-        case 'artic':
-          return secondaryClimate;
-        case 'artificial temperate':
-          return secondaryClimate;
-        case 'frigid':
-          return secondaryClimate;
-        case 'frozen':
-          return secondaryClimate;
-        case 'gas':
-          return secondaryClimate;
-        case 'hot':
-          return secondaryClimate;
-        case 'humid':
-        case 'moist':
-          return secondaryClimate;
-        case 'plateaus':
-          return secondaryClimate;
-        case 'polluted':
-          return secondaryClimate;
-        case 'murky':
-          return secondaryClimate;
-        case 'rainforests':
-          return secondaryClimate;
-        case 'rocky':
-          return secondaryClimate;
-        case 'superheated':
-          return secondaryClimate;
-        case 'subartic':
-          return secondaryClimate;
-        case 'toxic cloudsea':
-          return secondaryClimate;
-        case 'tropical':
-          return secondaryClimate;
-        case 'windy':
-          return secondaryClimate;
-        default:
-          return secondaryClimate;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  let findTertiaryClimate = (tertiaryClimate) => {
-    try {
-      switch (tertiaryClimate) {
-        case 'airless asteroid':
-          return tertiaryClimate;
-        case 'arid':
-          return tertiaryClimate;
-        case 'arctic':
-        case 'artic':
-          return tertiaryClimate;
-        case 'artificial temperate':
-          return tertiaryClimate;
-        case 'frigid':
-          return tertiaryClimate;
-        case 'frozen':
-          return tertiaryClimate;
-        case 'gas':
-          return tertiaryClimate;
-        case 'hot':
-          return tertiaryClimate;
-        case 'humid':
-        case 'moist':
-          return tertiaryClimate;
-        case 'plateaus':
-          return tertiaryClimate;
-        case 'polluted':
-          return tertiaryClimate;
-        case 'murky':
-          return tertiaryClimate;
-        case 'rainforests':
-          return tertiaryClimate;
-        case 'rocky':
-          return tertiaryClimate;
-        case 'superheated':
-          return tertiaryClimate;
-        case 'subartic':
-          return tertiaryClimate;
-        case 'toxic cloudsea':
-          return tertiaryClimate;
-        case 'tropical':
-          return tertiaryClimate;
-        case 'windy':
-          return tertiaryClimate;
-        default:
-          return tertiaryClimate;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // let findPrimaryClimate = (primaryClimate) => {
+  //   try {
+  //     switch (primaryClimate) {
+  //       case 'airless asteroid':
+  //         return primaryClimate;
+  //       case 'arid':
+  //       case 'hot':
+  //         return primaryClimate;
+  //       case 'arctic':
+  //       case 'artic':
+  //       case 'frozen':
+  //         return primaryClimate;
+  //       case 'artificial temperate':
+  //         return primaryClimate;
+  //       case 'frigid':
+  //         return primaryClimate;
+  //       case 'gas':
+  //         return primaryClimate;
+  //       case 'humid':
+  //       case 'moist':
+  //         return primaryClimate;
+  //       case 'plateaus':
+  //         return primaryClimate;
+  //       case 'polluted':
+  //         return primaryClimate;
+  //       case 'murky':
+  //         return primaryClimate;
+  //       case 'rainforests':
+  //         return primaryClimate;
+  //       case 'rocky':
+  //         return primaryClimate;
+  //       case 'superheated':
+  //         return primaryClimate;
+  //       case 'subartic':
+  //         return primaryClimate;
+  //       case 'toxic cloudsea':
+  //         return primaryClimate;
+  //       case 'tropical':
+  //         return primaryClimate;
+  //       case 'windy':
+  //         return primaryClimate;
+  //       default:
+  //         return primaryClimate;
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // let findSecondaryClimate = (secondaryClimate) => {
+  //   try {
+  //     switch (secondaryClimate) {
+  //       case 'airless asteroid':
+  //         return secondaryClimate;
+  //       case 'arid':
+  //         return secondaryClimate;
+  //       case 'arctic':
+  //       case 'artic':
+  //         return secondaryClimate;
+  //       case 'artificial temperate':
+  //         return secondaryClimate;
+  //       case 'frigid':
+  //         return secondaryClimate;
+  //       case 'frozen':
+  //         return secondaryClimate;
+  //       case 'gas':
+  //         return secondaryClimate;
+  //       case 'hot':
+  //         return secondaryClimate;
+  //       case 'humid':
+  //       case 'moist':
+  //         return secondaryClimate;
+  //       case 'plateaus':
+  //         return secondaryClimate;
+  //       case 'polluted':
+  //         return secondaryClimate;
+  //       case 'murky':
+  //         return secondaryClimate;
+  //       case 'rainforests':
+  //         return secondaryClimate;
+  //       case 'rocky':
+  //         return secondaryClimate;
+  //       case 'superheated':
+  //         return secondaryClimate;
+  //       case 'subartic':
+  //         return secondaryClimate;
+  //       case 'toxic cloudsea':
+  //         return secondaryClimate;
+  //       case 'tropical':
+  //         return secondaryClimate;
+  //       case 'windy':
+  //         return secondaryClimate;
+  //       default:
+  //         return secondaryClimate;
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+  // let findTertiaryClimate = (tertiaryClimate) => {
+  //   try {
+  //     switch (tertiaryClimate) {
+  //       case 'airless asteroid':
+  //         return tertiaryClimate;
+  //       case 'arid':
+  //         return tertiaryClimate;
+  //       case 'arctic':
+  //       case 'artic':
+  //         return tertiaryClimate;
+  //       case 'artificial temperate':
+  //         return tertiaryClimate;
+  //       case 'frigid':
+  //         return tertiaryClimate;
+  //       case 'frozen':
+  //         return tertiaryClimate;
+  //       case 'gas':
+  //         return tertiaryClimate;
+  //       case 'hot':
+  //         return tertiaryClimate;
+  //       case 'humid':
+  //       case 'moist':
+  //         return tertiaryClimate;
+  //       case 'plateaus':
+  //         return tertiaryClimate;
+  //       case 'polluted':
+  //         return tertiaryClimate;
+  //       case 'murky':
+  //         return tertiaryClimate;
+  //       case 'rainforests':
+  //         return tertiaryClimate;
+  //       case 'rocky':
+  //         return tertiaryClimate;
+  //       case 'superheated':
+  //         return tertiaryClimate;
+  //       case 'subartic':
+  //         return tertiaryClimate;
+  //       case 'toxic cloudsea':
+  //         return tertiaryClimate;
+  //       case 'tropical':
+  //         return tertiaryClimate;
+  //       case 'windy':
+  //         return tertiaryClimate;
+  //       default:
+  //         return tertiaryClimate;
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div
