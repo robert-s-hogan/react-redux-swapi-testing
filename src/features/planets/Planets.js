@@ -37,15 +37,7 @@ const PlanetsList = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [
-    page,
-    totalPages,
-    prefetchNext,
-    prefetchPrev,
-    planetsStatus,
-    dispatch,
-    data,
-  ]);
+  }, [page, totalPages, prefetchNext, prefetchPrev, planetsStatus, dispatch, data]);
 
   if (isLoading) {
     return <Loading />;
@@ -80,7 +72,7 @@ const PlanetsList = () => {
       )}
       <Pagination>
         <button
-          className="letter-box bg-green"
+          className="letter-box bg-green px-3 py-1"
           onClick={() => setPage((prev) => prev - 1)}
           isLoading={isFetching}
           onMouseEnter={prefetchPrev}
@@ -93,7 +85,7 @@ const PlanetsList = () => {
           isLoading={isFetching}
           onMouseEnter={prefetchNext}
           disabled={page === totalPages}
-          className="letter-box bg-orange"
+          className="letter-box bg-orange px-3 py-1"
         >
           next
         </button>

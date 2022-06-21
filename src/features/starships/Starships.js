@@ -37,15 +37,7 @@ const Starships = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [
-    page,
-    totalPages,
-    prefetchNext,
-    starshipsStatus,
-    prefetchPrev,
-    dispatch,
-    data,
-  ]);
+  }, [page, totalPages, prefetchNext, starshipsStatus, prefetchPrev, dispatch, data]);
 
   if (isLoading) {
     return <Loading />;
@@ -72,7 +64,7 @@ const Starships = () => {
       )}
       <Pagination>
         <button
-          className="letter-box bg-green"
+          className="letter-box bg-green px-3 py-1"
           onClick={() => setPage((prev) => prev - 1)}
           isLoading={isFetching}
           onMouseEnter={prefetchPrev}
@@ -85,7 +77,7 @@ const Starships = () => {
           isLoading={isFetching}
           onMouseEnter={prefetchNext}
           disabled={page === totalPages}
-          className="letter-box bg-orange"
+          className="letter-box bg-orange px-3 py-1"
         >
           next
         </button>

@@ -37,15 +37,7 @@ const Species = () => {
     if (page !== totalPages) {
       prefetchNext();
     }
-  }, [
-    page,
-    totalPages,
-    prefetchNext,
-    prefetchPrev,
-    speciesStatus,
-    dispatch,
-    data,
-  ]);
+  }, [page, totalPages, prefetchNext, prefetchPrev, speciesStatus, dispatch, data]);
 
   if (isLoading) {
     return <Loading />;
@@ -65,17 +57,14 @@ const Species = () => {
         <GridContainer>
           {data.results.map((specie) => (
             <CardContainer key={specie.name}>
-              <Specie
-                name={specie.name}
-                classification={specie.classification}
-              />
+              <Specie name={specie.name} classification={specie.classification} />
             </CardContainer>
           ))}
         </GridContainer>
       )}
       <Pagination>
         <button
-          className="letter-box bg-green"
+          className="letter-box bg-green px-3 py-1"
           onClick={() => setPage((prev) => prev - 1)}
           isLoading={isFetching}
           onMouseEnter={prefetchPrev}
@@ -88,7 +77,7 @@ const Species = () => {
           isLoading={isFetching}
           onMouseEnter={prefetchNext}
           disabled={page === totalPages}
-          className="letter-box bg-orange"
+          className="letter-box bg-orange px-3 py-1"
         >
           next
         </button>
